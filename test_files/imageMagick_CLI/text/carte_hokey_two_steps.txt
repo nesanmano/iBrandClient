@@ -1,0 +1,24 @@
+# Texte (Generation)
+convert -size x146 -background transparent -font "C:\test\OLD SPORT 01 COLLEGE NCV.ttf" -fill "#2d292a" -gravity east -depth 8 -colorspace srgb -type TrueColorAlpha label:"{q5}" {TMP_OUT:numero}
+convert -depth 8 -colorspace srgb -type TrueColorAlpha -size 400x30 -background transparent -font "C:\test\OLD SPORT 02 ATHLETIC NCV.ttf" -fill white -stroke none -strokewidth 5 -gravity west label:"{q4}" {TMP_OUT:equipe}
+convert -depth 8 -colorspace srgb -type TrueColorAlpha -size 400x30 -background transparent -font "C:\test\OLD SPORT 02 ATHLETIC NCV.ttf" -fill white -stroke none -strokewidth 5 -gravity west label:"{q3}" {TMP_OUT:nom}
+convert -depth 8 -colorspace srgb -type TrueColorAlpha -size 400x30 -background transparent -font "C:\test\OLD SPORT 02 ATHLETIC NCV.ttf" -fill white -stroke none -strokewidth 5 -gravity west label:"{q2}" {TMP_OUT:prenom}
+
+# texte (Composition)
+convert -size 799x1065 xc:transparent {TMP_OUT:text}
+composite -gravity northeast -geometry +035+030 {TMP_IN:numero} {TMP_IN:text} {TMP_OUT:text}
+composite -gravity southwest -geometry +360+117 {TMP_IN:prenom} {TMP_IN:text} {TMP_OUT:text}
+composite -gravity southwest -geometry +360+075 {TMP_IN:nom} {TMP_IN:text} {TMP_OUT:text}
+composite -gravity southwest -geometry +360+030 {TMP_IN:equipe} {TMP_IN:text} {TMP_OUT:text}
+
+# Partie gauche (Recto)
+convert "{q1}" -auto-orient -resize "799x" {TMP_OUT:part1}
+convert {TMP_IN:part1} -gravity center -crop "799x1065+0+0" {TMP_OUT:part1}
+convert {TMP_IN:part1} PNG:"{BASE_DIR}recto.png" -composite {TMP_OUT:part1}
+convert {TMP_IN:part1} {TMP_IN:text} -composite {TMP_OUT:part1}
+
+# output 1 (recto seulement)
+convert {TMP_IN:part1} {OUT:recto:JPG:90}
+
+# output 2 (impression)
+convert {TMP_IN:part1} JPG:"{BASE_DIR}verso.jpg" +append {OUT:impression:JPG:90}

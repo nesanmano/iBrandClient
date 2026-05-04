@@ -1,0 +1,1 @@
+-y -allowed_media_types video -i "{q2}" -vcodec copy -an -t {q1} "{RESULT_FILE}"

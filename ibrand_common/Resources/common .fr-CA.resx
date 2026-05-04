@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="app_title" xml:space="preserve">
+    <value>iBrand (tm)</value>
+  </data>
+  <data name="Camera" xml:space="preserve">
+    <value>Caméra</value>
+  </data>
+  <data name="ErrorCameraTakePictureCanon" xml:space="preserve">
+    <value>Les erreurs suivantes ont été détectées lors de la dernière tentative de prise photo:</value>
+  </data>
+  <data name="ErrorCameraTakePictureNoFile" xml:space="preserve">
+    <value>Pas de fichier d'image détecté.</value>
+  </data>
+  <data name="UI_PrinterSettings_Bottom" xml:space="preserve">
+    <value>Bas</value>
+  </data>
+  <data name="FilterWriteToFileError" xml:space="preserve">
+    <value>Il n'a pas été possible d'écrire la abstractConfiguration du filter sur disque.</value>
+  </data>
+  <data name="UI_PrinterSettings_Center" xml:space="preserve">
+    <value>Centre</value>
+  </data>
+  <data name="iBrandTrademark" xml:space="preserve">
+    <value>iBrand™</value>
+  </data>
+  <data name="UI_PrinterSettings_Close" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="ui_ChromaDialog_NoCamera" xml:space="preserve">
+    <value>Aucune caméra détectée. Une image générique sera utilisée.</value>
+  </data>
+  <data name="UI_PrinterSettings_DetectOrientation" xml:space="preserve">
+    <value>Orientation automatique</value>
+  </data>
+  <data name="ui_FilterDialog_ApplyButton" xml:space="preserve">
+    <value>Appliquer la transformation</value>
+  </data>
+  <data name="UI_PrinterSettings_HorizontalAlignment" xml:space="preserve">
+    <value>Alignement horizontal</value>
+  </data>
+  <data name="ui_FilterDialog_ButtonDefaultBlueScreen" xml:space="preserve">
+    <value>Valeurs initiales (fond bleu)</value>
+  </data>
+  <data name="UI_PrinterSettings_IgnoreMargins" xml:space="preserve">
+    <value>Ignorer les marges de la page</value>
+  </data>
+  <data name="ui_FilterDialog_ButtonDefaultGreenScreen" xml:space="preserve">
+    <value>Valeurs initiales (fond vert)</value>
+  </data>
+  <data name="UI_PrinterSettings_Landscape" xml:space="preserve">
+    <value>Orientation paysage</value>
+  </data>
+  <data name="ui_FilterDialog_CloseButton" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="UI_PrinterSettings_Left" xml:space="preserve">
+    <value>Gauche</value>
+  </data>
+  <data name="ui_FilterDialog_SaveButton" xml:space="preserve">
+    <value>Sauvegarder</value>
+  </data>
+  <data name="UI_PrinterSettings_MaxSurfaceScale" xml:space="preserve">
+    <value>Maximiser l'usage de la surface</value>
+  </data>
+  <data name="ui_FilterDialog_TakePictureButton" xml:space="preserve">
+    <value>Prendre une image</value>
+  </data>
+  <data name="UI_PrinterSettings_PageResolution" xml:space="preserve">
+    <value>Utiliser la résolution de la page</value>
+  </data>
+  <data name="ui_Filter_BlendLabel" xml:space="preserve">
+    <value>Mélange</value>
+  </data>
+  <data name="UI_PrinterSettings_PaperType" xml:space="preserve">
+    <value>Type de papier</value>
+  </data>
+  <data name="ui_Filter_BlueLabel" xml:space="preserve">
+    <value>Bleu</value>
+  </data>
+  <data name="UI_PrinterSettings_PrinterName" xml:space="preserve">
+    <value>Nom de l'imprimante</value>
+  </data>
+  <data name="ui_Filter_GreenLabel" xml:space="preserve">
+    <value>Vert</value>
+  </data>
+  <data name="UI_PrinterSettings_Right" xml:space="preserve">
+    <value>Droite</value>
+  </data>
+  <data name="ui_Filter_HueLabel" xml:space="preserve">
+    <value>Teinte</value>
+  </data>
+  <data name="UI_PrinterSettings_Scaled" xml:space="preserve">
+    <value>Étendre sur la surface</value>
+  </data>
+  <data name="ui_Filter_KeyedPictureLabel" xml:space="preserve">
+    <value>Image modifiée</value>
+  </data>
+  <data name="UI_PrinterSettings_Top" xml:space="preserve">
+    <value>Haut</value>
+  </data>
+  <data name="ui_Filter_LuminanceLabel" xml:space="preserve">
+    <value>Luminance</value>
+  </data>
+  <data name="UI_PrinterSettings_VerticalAlignment" xml:space="preserve">
+    <value>Alignement vertical</value>
+  </data>
+  <data name="ui_Filter_OriginalPictureLabel" xml:space="preserve">
+    <value>Image originale</value>
+  </data>
+  <data name="UI_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="ui_Filter_RedLabel" xml:space="preserve">
+    <value>Rouge</value>
+  </data>
+  <data name="UI_PrintTestFailed" xml:space="preserve">
+    <value>L'imprimante n'a pas été capable d'imprimer le fichier. Test échoué.</value>
+  </data>
+  <data name="ui_Filter_SaturationLabel" xml:space="preserve">
+    <value>Saturation</value>
+  </data>
+  <data name="UI_PrintTestTimeout" xml:space="preserve">
+    <value>La requête d'impression est restée sans réponse. Test échoué.</value>
+  </data>
+  <data name="ui_Filter_SemiHueLabel" xml:space="preserve">
+    <value>Demi Teinte</value>
+  </data>
+  <data name="ui_Filter_SemiLuminanceLabel" xml:space="preserve">
+    <value>Demi Luminance</value>
+  </data>
+  <data name="ui_Filter_SemiSaturationLabel" xml:space="preserve">
+    <value>Demi Saturation</value>
+  </data>
+  <data name="ui_Filter_SimilarityLabel" xml:space="preserve">
+    <value>Similitude</value>
+  </data>
+  <data name="ui_ChromaDialog_RemoveButton" xml:space="preserve">
+    <value>Enlever</value>
+  </data>
+  <data name="ui_ChromaDialog_FullPreview" xml:space="preserve">
+    <value>Visualiser</value>
+  </data>
+  <data name="ui_ChromaDialog_ResetImage" xml:space="preserve">
+    <value>Réinitialiser</value>
+  </data>
+  <data name="ui_ChromaDialog_SavePreview" xml:space="preserve">
+    <value>Sauvegarder</value>
+  </data>
+  <data name="ui_ChromaDialog_PreviewFileCreated" xml:space="preserve">
+    <value>Image de pré-visualisation sauvegardée sur le Bureau.</value>
+  </data>
+  <data name="UI_BundleCalibration_InvalidDirectory" xml:space="preserve">
+    <value>Répertoire invalide. Choisissez un répertoire avec une liste d'images.</value>
+  </data>
+  <data name="UI_PrinterSettings_PrintCounter" xml:space="preserve">
+    <value>Nombre d'impression :</value>
+  </data>
+  <data name="UI_PrinterSettings_PrintRoll" xml:space="preserve">
+    <value>Rouleau</value>
+  </data>
+  <data name="UI_PrinterSettings_Reset" xml:space="preserve">
+    <value>Réinitialiser</value>
+  </data>
+  <data name="UI_PrintUtil_RollLow" xml:space="preserve">
+    <value>Le papier d'impression va bientôt commencer à manquer. SVP aviser un représentant.</value>
+  </data>
+  <data name="UI_PrinterSettings_ShowPrintCountWarnings" xml:space="preserve">
+    <value>Afficher avertissements</value>
+  </data>
+</root>

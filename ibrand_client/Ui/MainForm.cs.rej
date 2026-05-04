@@ -1,0 +1,18 @@
+diff a/ibrand_client/Ui/MainForm.cs b/ibrand_client/Ui/MainForm.cs	(rejected hunks)
+@@ -3523,12 +3523,13 @@
+                 }
+             };
+             screensController.AddScreen(skipPicture);
+-            
+-            var takePicture = new TakePictureScreen(sc, photoboothDir + "take_picture.jpg", null, null, FROM_TOP, 50, 7, PICTURE_LIVE_SIZE)
++            */
++            var takePicture = new TakePictureScreen(sc, photoboothDir + "take_picture.jpg", null, null, FROM_TOP, 50, 7, PICTURE_PREVIEW_SIZE)
+             {
+                 Parent = screen_panel,
+-                LivePreviewOverlays = new List<PreviewOverlayInfo> { new PreviewOverlayInfo(photoboothDir + "overlay_preview.png", new Point(0, 60), null) },
++                LivePreviewOverlays = new List<PreviewOverlayInfo> { new PreviewOverlayInfo(photoboothDir + "overlay_preview.png", new Point(0, 0), null) },
+                 IsCropRequired = false
++                //,DebugImageDir = @"C:\Users\Fran�ois Coupal\AppData\Local\Nomad Logic\iBrand\logs"
+             };
+             screensController.AddScreen(takePicture);
+ 

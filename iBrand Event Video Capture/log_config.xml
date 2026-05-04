@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      autoReload="false">
+
+  <targets>
+    <target name="main" xsi:type="File" encoding="utf-8"
+      layout="[${level}] ${longdate} [${processid}:${processname} - ${callsite:className=true:includeSourcePath=true}] => ${message} ${exception:format=ToString}"
+      fileName="main.log"
+      archiveFileName="archives/main.{#}.zip"
+      archiveEvery="Day"
+      archiveNumbering="Rolling"
+      maxArchiveFiles="7"
+      enableArchiveFileCompression="true" />
+	
+    <target name="rest" xsi:type="File" encoding="utf-8"
+      layout="[${level}] ${longdate} [${processid}:${processname} - ${callsite:className=true:includeSourcePath=false}] => ${message} ${exception:format=ToString}"
+      fileName="rest.log"
+      archiveFileName="archives/rest.{#}.zip"
+      archiveEvery="Day"
+      archiveNumbering="Rolling"
+      maxArchiveFiles="7"
+      enableArchiveFileCompression="true" />
+	
+    <target name="synchro" xsi:type="File" encoding="utf-8"
+      layout="[${level}] ${longdate} [${processid}:${processname} - ${callsite:className=true:includeSourcePath=true}] => ${message} ${exception:format=ToString}"
+      fileName="synchro.log"
+      archiveFileName="archives/synchro.{#}.zip"
+      archiveEvery="Day"
+      archiveNumbering="Rolling"
+      maxArchiveFiles="7"
+      enableArchiveFileCompression="true" />
+	
+    <target name="cli" xsi:type="File" encoding="utf-8"
+      layout="[${level}] ${longdate} [${processid}:${processname} - ${callsite:className=true:includeSourcePath=true}] => ${message} ${exception:format=ToString}"
+      fileName="cli.log"
+      archiveFileName="archives/cli.{#}.zip"
+      archiveEvery="Day"
+      archiveNumbering="Rolling"
+      maxArchiveFiles="7"
+	  enableArchiveFileCompression="true" />
+	  
+	  <target name="file_ui" xsi:type="File" encoding="utf-8"
+      layout="[${level}] ${longdate} => ${message} ${exception:format=ToString}"
+      fileName="file_ui.log"
+      archiveFileName="archives/file_ui.{#}.zip"
+      archiveEvery="Day"
+      archiveNumbering="Rolling"
+      maxArchiveFiles="1"
+	  enableArchiveFileCompression="true" />
+	  
+	  <target name="services" xsi:type="File" encoding="utf-8"
+      layout="[${level}] ${longdate} => ${message} ${exception:format=ToString}"
+      fileName="services.log"
+      archiveFileName="archives/services.{#}.zip"
+      archiveEvery="Day"
+      archiveNumbering="Rolling"
+      maxArchiveFiles="1"
+	  enableArchiveFileCompression="true" />
+	  
+	  <target name="lang" xsi:type="File" encoding="utf-8"
+      layout="[${level}] ${longdate} => ${message} ${exception:format=ToString}"
+      fileName="lang.log"
+      archiveFileName="archives/lang.{#}.zip"
+      archiveEvery="Day"
+      archiveNumbering="Rolling"
+      maxArchiveFiles="1"
+	  enableArchiveFileCompression="true" />
+  </targets>
+
+  <rules>
+    
+  <!-- Autres
+	<logger name="NomadLogic.Common.Services.ServiceLongRunningAbstract" minlevel="Debug" writeTo="main" />
+	<logger name="NomadLogic.Common.Multimedia.ImageMagickCLI.*" minlevel="Trace" writeTo="cli" />
+  
+	<logger name="NomadLogic.Common.Services.Database.*" minlevel="Trace" writeTo="main" />
+	<logger name="NomadLogic.iBrandDesktop.Services.*" minlevel="Info" writeTo="synchro" />
+	-->
+    <logger name="*" minlevel="Info" writeTo="main" />
+  </rules>
+</nlog>

@@ -1,0 +1,10 @@
+{
+	"consumer": {
+		"answers": {
+			"email": "test1@eshots.com",
+			"phone": "514-452-1236",
+			"first_name": "Pierre",
+			"last_name": "Gendron"
+		}
+	}
+}

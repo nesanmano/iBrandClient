@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutMenu" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AppLanguage" xml:space="preserve">
+    <value>App language</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>iBrand(tm)</value>
+  </data>
+  <data name="BackMenu" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="BkDirSrc" xml:space="preserve">
+    <value>Backup Folder :</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CloseMenu" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="CloseQuestionnaire" xml:space="preserve">
+    <value>Are you sure? If you start entering a new respondent, information will be lost.</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company : Nomad Logic inc.</value>
+  </data>
+  <data name="ConfigurationMenu" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="ConnectedServer" xml:space="preserve">
+    <value>Connected to server.</value>
+  </data>
+  <data name="ConnectServer" xml:space="preserve">
+    <value>Connecting to server...</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>Copyright © Nomad Logic 2011</value>
+  </data>
+  <data name="DatabaseSrc" xml:space="preserve">
+    <value>Database :</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date :</value>
+  </data>
+  <data name="db_button" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeletePicturesAfterSynchroLabel" xml:space="preserve">
+    <value>Delete picture after synchro</value>
+  </data>
+  <data name="DeleteProjects" xml:space="preserve">
+    <value>Really wants to delete project(s) ?</value>
+  </data>
+  <data name="DeleteProjectsMenu" xml:space="preserve">
+    <value>Delete Project(s)</value>
+  </data>
+  <data name="DeviceName" xml:space="preserve">
+    <value>Device :</value>
+  </data>
+  <data name="EnterPW" xml:space="preserve">
+    <value>Please enter password.</value>
+  </data>
+  <data name="EnterUserName" xml:space="preserve">
+    <value>Please enter user name.</value>
+  </data>
+  <data name="ErrorConnectionClosed" xml:space="preserve">
+    <value>Synchronization error: connection closed </value>
+  </data>
+  <data name="ErrorConnectServer" xml:space="preserve">
+    <value>Could not connect to server</value>
+  </data>
+  <data name="ErrorNoProject" xml:space="preserve">
+    <value>No project associated to username/pw</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Event :</value>
+  </data>
+  <data name="ExitMenu" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="FileMenu" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="FileSaved" xml:space="preserve">
+    <value>Files saved.</value>
+  </data>
+  <data name="FinishMenu" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="GetProjectMenu" xml:space="preserve">
+    <value>Get/Update Project</value>
+  </data>
+  <data name="GettingProject" xml:space="preserve">
+    <value>Getting project...</value>
+  </data>
+  <data name="LanguageButton" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="MandatoryQuestion" xml:space="preserve">
+    <value>Question marked with an * are mandatory.</value>
+  </data>
+  <data name="NextMenu" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="NoProjectAvailable" xml:space="preserve">
+    <value>No project  available, you should Get at least one iBrand(tm) project.</value>
+  </data>
+  <data name="NoProjectSelected" xml:space="preserve">
+    <value>No project selected.</value>
+  </data>
+  <data name="NoQuestionnaireForProject" xml:space="preserve">
+    <value>No questionnaire associated to project</value>
+  </data>
+  <data name="NoRespondentToUpload" xml:space="preserve">
+    <value>No respondent to upload.
+</value>
+  </data>
+  <data name="NotValidDeviceName" xml:space="preserve">
+    <value>Device name is not valid.</value>
+  </data>
+  <data name="NotValidIP" xml:space="preserve">
+    <value>IP address is not valid. (ex: 67.69.111.115)</value>
+  </data>
+  <data name="NotValidSecureStreamPort" xml:space="preserve">
+    <value>Secure stream port not valid. (ex: 4151)</value>
+  </data>
+  <data name="NotValidServerPort" xml:space="preserve">
+    <value>Server port not valid. (ex: 8080)</value>
+  </data>
+  <data name="NotValidStreamPort" xml:space="preserve">
+    <value>Stream port not valid. (ex: 4222)</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password :</value>
+  </data>
+  <data name="pictureDirButton" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="picturesSrc" xml:space="preserve">
+    <value>Pictures :</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="ProjectNotSynchronized" xml:space="preserve">
+    <value>At least one project has none synchronized respondents. Synch before deleting project(s).</value>
+  </data>
+  <data name="ProjectSaved" xml:space="preserve">
+    <value>Project saved.</value>
+  </data>
+  <data name="Questionnaire" xml:space="preserve">
+    <value>Questionnaire :</value>
+  </data>
+  <data name="SavingFiles" xml:space="preserve">
+    <value>Saving files...</value>
+  </data>
+  <data name="SecureStreamPort" xml:space="preserve">
+    <value>Secure stream port :</value>
+  </data>
+  <data name="SelectEventError" xml:space="preserve">
+    <value>You must select an event</value>
+  </data>
+  <data name="SelectQuestionnaireError" xml:space="preserve">
+    <value>You must select a questionnaire</value>
+  </data>
+  <data name="ServerAdr" xml:space="preserve">
+    <value>Server address :</value>
+  </data>
+  <data name="ServerPort" xml:space="preserve">
+    <value>Server port :</value>
+  </data>
+  <data name="SetDateMenu" xml:space="preserve">
+    <value>Set Date</value>
+  </data>
+  <data name="ShowKeyboardLabel" xml:space="preserve">
+    <value>Show embedded keyboard</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="StreamPort" xml:space="preserve">
+    <value>Stream port :</value>
+  </data>
+  <data name="SwitchModeMenu" xml:space="preserve">
+    <value>Switch Mode</value>
+  </data>
+  <data name="SynchroError" xml:space="preserve">
+    <value>Synchronization error:</value>
+  </data>
+  <data name="SynchroErrorFindFile" xml:space="preserve">
+    <value>Could not find file :</value>
+  </data>
+  <data name="SynchroErrorNotAllRespondents" xml:space="preserve">
+    <value>ERROR : Not all respondent(s) uploaded.</value>
+  </data>
+  <data name="SynchroErrorSendFile" xml:space="preserve">
+    <value>Could not send file</value>
+  </data>
+  <data name="SynchroRespondentUpload" xml:space="preserve">
+    <value>Respondent(s) to upload :</value>
+  </data>
+  <data name="SynchroRespondentUploaded" xml:space="preserve">
+    <value>Respondent(s) uploaded :</value>
+  </data>
+  <data name="SynchroSuccess" xml:space="preserve">
+    <value>Data upload completed successfully.</value>
+  </data>
+  <data name="SynchroSynchingProject" xml:space="preserve">
+    <value>Synching project :</value>
+  </data>
+  <data name="SynchroUploadingRespondent" xml:space="preserve">
+    <value>Uploading respondent...</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Time :</value>
+  </data>
+  <data name="TimeZone" xml:space="preserve">
+    <value>Time zone :</value>
+  </data>
+  <data name="TotalRespondentMenu" xml:space="preserve">
+    <value>Total Respondent(s) : </value>
+  </data>
+  <data name="UploadDataMenu" xml:space="preserve">
+    <value>Upload Data</value>
+  </data>
+  <data name="UploadingRespondent" xml:space="preserve">
+    <value>Uploading respondent :</value>
+  </data>
+  <data name="UseEncryption" xml:space="preserve">
+    <value>Use encryption when uploading data.</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>User name : </value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>Version :</value>
+  </data>
+  <data name="VideoSelectionDir" xml:space="preserve">
+    <value>Selected video :</value>
+  </data>
+  <data name="VideosSrc" xml:space="preserve">
+    <value>Videos :</value>
+  </data>
+  <data name="WrongPassword" xml:space="preserve">
+    <value>Wrong password.</value>
+  </data>
+  <data name="WrongPattern1" xml:space="preserve">
+    <value>Answer number</value>
+  </data>
+  <data name="WrongPattern2" xml:space="preserve">
+    <value>should be in the form :</value>
+  </data>
+  <data name="PrintOffsetXLabel" xml:space="preserve">
+    <value>Frame side offSet correction :</value>
+  </data>
+  <data name="PpcLabel" xml:space="preserve">
+    <value>PPC Name :</value>
+  </data>
+  <data name="SendPicturesToPrintstationLabel" xml:space="preserve">
+    <value>Send pictures to Printstation</value>
+  </data>
+  <data name="ShowPreviewOnTvLabel" xml:space="preserve">
+    <value>Show picture preview on second screen</value>
+  </data>
+  <data name="SynchronizeLiveLabel" xml:space="preserve">
+    <value>Synchronize Live</value>
+  </data>
+  <data name="TouchScreenLabel" xml:space="preserve">
+    <value>Touch Screen mode</value>
+  </data>
+  <data name="ViewButtonLabel" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="AnimatedGifLabel" xml:space="preserve">
+    <value>Animated GIF</value>
+  </data>
+  <data name="CameraSettingsButtonLabel" xml:space="preserve">
+    <value>Camera Settings...</value>
+  </data>
+  <data name="CloseApplicationButtonLabel" xml:space="preserve">
+    <value>Close iBrand(tm)</value>
+  </data>
+  <data name="FacebookTextLabel" xml:space="preserve">
+    <value>Facebook text :</value>
+  </data>
+  <data name="LanguageLabel" xml:space="preserve">
+    <value>Language :</value>
+  </data>
+  <data name="PrinterLabel" xml:space="preserve">
+    <value>Printer :</value>
+  </data>
+  <data name="TwitterTextLabel" xml:space="preserve">
+    <value>Twitter text :</value>
+  </data>
+  <data name="PrintOffsetXInvalidText" xml:space="preserve">
+    <value>OffSet value should be a whole number, positive or negative.</value>
+  </data>
+  <data name="PasswordInvalid" xml:space="preserve">
+    <value>The password is invalid.</value>
+  </data>
+  <data name="OnClosingWaitForTransformation" xml:space="preserve">
+    <value>Please wait while current respondent transforming is ongoing.</value>
+  </data>
+  <data name="OnClosingWaitForUpload" xml:space="preserve">
+    <value>Please wait while current respondent data is uploading.</value>
+  </data>
+  <data name="QuestionnaireValidationFailed" xml:space="preserve">
+    <value>Could not save questionnaire: validation failed.</value>
+  </data>
+  <data name="ValueNotInDataSource" xml:space="preserve">
+    <value>No corresponding value in data source for following question:</value>
+  </data>
+  <data name="ErrorFullAutoCameraRetry" xml:space="preserve">
+    <value>Camera could not capture all necessary pictures. Please retry.</value>
+  </data>
+  <data name="ChromaConfig" xml:space="preserve">
+    <value>Local Chroma Keying Settings</value>
+  </data>
+  <data name="NoBackgroundSelected" xml:space="preserve">
+    <value>Select a background to continue.</value>
+  </data>
+  <data name="UNKNOWN_TAG" xml:space="preserve">
+    <value>UNKNOWN TAG</value>
+  </data>
+  <data name="NoVideoSource" xml:space="preserve">
+    <value>Error. No video file found.</value>
+  </data>
+  <data name="BackupDirNotAvailiable" xml:space="preserve">
+    <value>Back-up directory is nor availiable.</value>
+  </data>
+  <data name="CameraNotConnected" xml:space="preserve">
+    <value>Camera is not connected.</value>
+  </data>
+  <data name="NotAllMandatoryCheckEnabled" xml:space="preserve">
+    <value>You must check every mandatory opt-in formula to continue.</value>
+  </data>
+  <data name="NotAllEmailsAreValid" xml:space="preserve">
+    <value>Not all email address entered are valid.</value>
+  </data>
+  <data name="UI_NoCameraFound" xml:space="preserve">
+    <value>No camera found.</value>
+  </data>
+  <data name="UI_NoPictureFileFound" xml:space="preserve">
+    <value>No picture file was found.</value>
+  </data>
+  <data name="UI_CameraRingChoice_DuplicateAuthorDetected" xml:space="preserve">
+    <value>Erreur: Duplicata d'auteur détecté.</value>
+  </data>
+  <data name="UI_CameraRingChoice_ShowRecentErrorMessages" xml:space="preserve">
+    <value>Messages d'erreur récents</value>
+  </data>
+  <data name="UI_CameraRingChoice_CouldNotExtractFilesFromZip" xml:space="preserve">
+    <value>Could not extract files from zip. Deleting file: </value>
+  </data>
+  <data name="UI_CameraRingChoice_InvalidIncomingZipFile" xml:space="preserve">
+    <value>Incoming zip file is invalid. Discarding: </value>
+  </data>
+  <data name="UI_CameraRingChoice_ErrorDuringFileAnalisys" xml:space="preserve">
+    <value>Erro during file analysis: </value>
+  </data>
+  <data name="UI_CameraRingChoice_EnoughFilesReceived" xml:space="preserve">
+    <value>Enough files were received to validate choice.</value>
+  </data>
+  <data name="UI_CameraRingChoice_WaitingForFiles" xml:space="preserve">
+    <value>Server online. Waiting for incoming files.</value>
+  </data>
+  <data name="UI_CameraRingChoice_FileIncorrectlyReceived" xml:space="preserve">
+    <value>One or more files were not correctly received.</value>
+  </data>
+  <data name="UI_CameraRingChoice_ServerStatusString_01" xml:space="preserve">
+    <value>Server status: </value>
+  </data>
+  <data name="UI_CameraRingChoice_ServerStatusString_02" xml:space="preserve">
+    <value>Not started</value>
+  </data>
+  <data name="UI_CameraRingChoice_ServerStatusString_03" xml:space="preserve">
+    <value>Not Running</value>
+  </data>
+  <data name="UI_CameraRingChoice_ServerStatusString_04" xml:space="preserve">
+    <value>Running. Address: {0}:{1}</value>
+  </data>
+  <data name="UI_CameraRingChoice_Label_Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="UI_CameraRingChoice_Label_Pictures" xml:space="preserve">
+    <value>Picture(s):</value>
+  </data>
+  <data name="UI_CameraRingChoice_Label_Preview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="RemoveSelected" xml:space="preserve">
+    <value>Remove selected</value>
+  </data>
+  <data name="UI_ExitFromProjectBeforeClosing" xml:space="preserve">
+    <value>Exit from project before closing.</value>
+  </data>
+  <data name="UI_IncompleteReport" xml:space="preserve">
+    <value>Some capabilities were detected as invalid. Would you like to stop executing? You can check the capabilities report in the local directory for more information.</value>
+  </data>
+  <data name="UI_MissingCapabilities" xml:space="preserve">
+    <value>{0} - Missing capabilities.</value>
+  </data>
+  <data name="UI_PrinterSettings" xml:space="preserve">
+    <value>Printer settings</value>
+  </data>
+  <data name="AboutToDeleteFiles" xml:space="preserve">
+    <value>You are about to delete {0} file(s). Continue?</value>
+  </data>
+  <data name="MENU_BundleCalibration" xml:space="preserve">
+    <value>CameraRing calibration Configuration</value>
+  </data>
+  <data name="ui_setPrintstationsAddresses" xml:space="preserve">
+    <value>Printstations</value>
+  </data>
+  <data name="UI_TakePicture_CouldNotTakePicture" xml:space="preserve">
+    <value>Could not take picture with camera. Probably could not focus. Will try again automatically.</value>
+  </data>
+  <data name="BarcodeScreen_InvalidBarcode" xml:space="preserve">
+    <value>Invalid barcode. Please scan again.</value>
+  </data>
+  <data name="BarcodeScreen_CannotConnect" xml:space="preserve">
+    <value>Cannot connect to Scan peripheral. Please close the application and check hardware connections.</value>
+  </data>
+  <data name="BarcodeScreen_PeripheralDisconnect" xml:space="preserve">
+    <value>Scanner disconnected without known reason. Please close application and check hardware connections.</value>
+  </data>
+  <data name="MainForm_InvalidDatabase" xml:space="preserve">
+    <value>Invaid or inadequate database detected. Should we try to save the old file and restart anew?</value>
+  </data>
+  <data name="MainForm_InvalidDatabase_ErrorRecovery" xml:space="preserve">
+    <value>Error during back-up of curretn database file. Please correct the situation manually. The application will now close.</value>
+  </data>
+  <data name="MainForm_InvalidDatabase_ManualRemove" xml:space="preserve">
+    <value>Please remove the database file manually. This application will now close.</value>
+  </data>
+</root>

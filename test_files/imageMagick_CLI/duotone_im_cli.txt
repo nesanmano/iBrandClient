@@ -1,0 +1,18 @@
+# Resize-crop
+convert "{q1}" -resize "x1920" {TMP_OUT:r1}
+convert {TMP_IN:r1} -gravity center -crop "1280x1920+0+0" {TMP_OUT:c1}
+convert "{q2}" -resize "x1920" {TMP_OUT:r2}
+convert {TMP_IN:r2} -gravity center -crop "1280x1920+0+0" {TMP_OUT:c2}
+
+# Desaturate
+convert {TMP_IN:c1} -colorspace gray -sigmoidal-contrast 10,20% {TMP_OUT:1}
+convert {TMP_IN:c2} -colorspace gray -sigmoidal-contrast 10,20% {TMP_OUT:2}
+# Colorize
+convert {TMP_IN:1} -fill "rgb({q3:rgb})" -tint 100 {TMP_OUT:3}
+convert {TMP_IN:2} -fill "rgb({q4:rgb})" -tint 100 {TMP_OUT:4}
+convert {TMP_IN:4} -alpha set -channel Alpha -evaluate set 80% {TMP_OUT:5}
+# Composite
+convert {TMP_IN:3} {TMP_IN:5} -compose blend -define compose:args=40,60 -composite -alpha set {TMP_OUT:6}
+# overlays
+convert {TMP_IN:6} "{q5}" -compose LinearBurn -composite {TMP_OUT:7}
+convert {TMP_IN:7} "{q6}" -composite {OUT:1:JPG:90}

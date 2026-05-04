@@ -1,0 +1,42 @@
+{
+	"sync_mode": "Consolidate",
+	"fullscreen": true,
+	"languages": [
+		"en"
+	],
+	"loadLastRespondent": false,
+	"questions": [
+		{
+			"no": 1,
+			"clazz": "QuestionTextIdentifier",
+			"mandatory": true,
+			"enabled": true,
+			"recyclable": true,
+			"toSave": true,
+			"visible": true,
+			"toSync": true,
+			"toXML": true,
+			"texts": {
+				"en": "Unique ID (en)"
+			}
+		},
+		{
+			"no": 2,
+			"clazz": "QuestionCheck",
+			"mandatory": false,
+			"enabled": true,
+			"recyclable": true,
+			"toSave": true,
+			"visible": true,
+			"toSync": true,
+			"toXML": true,
+			"texts": {
+				"en": "Digital package"
+			}
+		}
+	],
+	"loaderclass": "Loader_CO1356_T3",
+	"dynamic_sync_exclusion_list": [
+		"print"
+	]
+}

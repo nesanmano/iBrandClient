@@ -1,0 +1,6 @@
+{
+	'executorClassName': 'NomadLogic.Common.Util.QuestionnaireWebRequest.iBrand.WebExecutorIbrand',
+	'executorConfiguration': {
+		'Timeout': 4500
+	}
+}

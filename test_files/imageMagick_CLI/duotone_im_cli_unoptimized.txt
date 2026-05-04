@@ -1,0 +1,12 @@
+# Desaturate
+convert "{q1}" -colorspace gray -sigmoidal-contrast 10,20% {TMP_OUT:1:MPC}
+convert "{q2}" -colorspace gray -sigmoidal-contrast 10,20% {TMP_OUT:2:MPC}
+# Colorize
+convert {TMP_IN:1} -fill "rgb({q3:rgb})" -tint 100 {TMP_OUT:3:JPG:79}
+convert {TMP_IN:2} -fill "rgb({q4:rgb})" -tint 100 {TMP_OUT:4:JPG:60}
+convert {TMP_IN:4} -alpha set -channel Alpha -evaluate set 80% {TMP_OUT:5:PNG:80}
+# Composite
+convert {TMP_IN:3} {TMP_IN:5} -compose blend -define compose:args=40,60 -composite -alpha set {TMP_OUT:6:JPG}
+# overlays
+convert {TMP_IN:6} "{q5}" -compose LinearBurn -composite {TMP_OUT:7:MPC}
+convert {TMP_IN:7} "{q6}" -composite {OUT:1:JPG:90}

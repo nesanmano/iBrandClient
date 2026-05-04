@@ -1,0 +1,35 @@
+{
+	'executorClassName': 'NomadLogic.Common.Util.QuestionnaireWebRequest.Emisys.WebRequestEmisysStandard',
+	'executorConfiguration': {
+		'Timeout': 2500,
+		'DoNotTestEndPointInit': true,
+		'LoginInfo': {
+			'RootApiUrl': 'https://live.byemisys.com/api',
+            'Apikey': 'GK9rVXJlHP5oOZj5z54C',
+            'UserEmail': 'api@nomadlogic.com',
+            'Version': 1
+		}
+	},
+	"executorAction": {
+		"ReturnTypeName": "NomadLogic.Common.Util.QuestionnaireWebRequest.Emisys.MemberIndividuInfo",
+		"WebRequestMethodName": "GetUserIndividuInfoFromCard",
+		"WebRequestMethodParameterDefinitions": [
+		  {
+			"TokenValue": "ABCDEF123",
+			"Name": "cardUid",
+			"NameType": "string"
+		  }
+		],
+		"WebMethod": "GET"
+	  },
+	"screenActions": [
+		{
+			"QuestionNumberOfPrint": 8,
+			"QuestionPrintPicture": 9,
+			"IsCritical": true,
+			"ShowErrorMessage": true,
+			"ErrorMessageEn": "Could not print image. Please contact a brand ambassador.",
+			"ErrorMessageFr": "Impossible d'imprimer l'image. Contactez un ambassadeur."
+		}
+	]
+}

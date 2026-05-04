@@ -1,0 +1,9 @@
+{
+	"projectId": "1",
+	"questionnaireId": "1",
+	"terminalId": "1",
+	"projectName": "Test",
+	"questionnaireName": "Install",
+	"terminalName": "ProjectInstall",
+	"main_file": "client.json"
+}

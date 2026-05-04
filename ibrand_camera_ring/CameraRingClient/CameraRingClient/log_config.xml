@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      autoReload="false">
+
+  <targets>
+    <target name="main" xsi:type="File"
+      layout="[${level}] ${longdate} [${processid}:${processname} - ${callsite:className=true:includeSourcePath=false}] => ${message} ${exception:format=ToString}"
+      fileName="main.log"
+      archiveFileName="archives/main.{#}.log"
+      archiveEvery="Day"
+      archiveNumbering="Rolling"
+      maxArchiveFiles="7"
+    enableArchiveFileCompression="true" />
+  </targets>
+
+  <rules>
+    <logger name="*" minlevel="Info" writeTo="main" />
+  </rules>
+</nlog>

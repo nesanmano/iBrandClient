@@ -1,0 +1,45 @@
+{
+	'executorClassName': 'NomadLogic.Common.Util.QuestionnaireWebRequest.Emisys.WebRequestEmisysStandard',
+	'executorConfiguration': {
+		'Timeout': 2500,
+		'DoNotTestEndPointInit': true,
+		'LoginInfo': {
+			'RootApiUrl': 'https://live.byemisys.com/api',
+            'Apikey': 'GK9rVXJlHP5oOZj5z54C',
+            'UserEmail': 'api@nomadlogic.com',
+            'Version': 1
+		}
+	},
+	'questionnaireMapper': [
+		{
+			'TargetClass': 'MemberIndividuInfo', 
+			'PropertyName': 'email', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 3
+		},
+		{
+			'TargetClass': 'MemberIndividuInfo', 
+			'PropertyName': 'last_name', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 1
+		},
+		{
+			'TargetClass': 'MemberIndividuInfo', 
+			'PropertyName': 'first_name', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2
+		}
+	],
+	"executorAction": {
+		"ReturnTypeName": "NomadLogic.Common.Util.QuestionnaireWebRequest.Emisys.MemberIndividuInfo",
+		"WebRequestMethodName": "GetMemberIndividuInfoFromCard",
+		"WebRequestMethodParameterDefinitions": [
+		  {
+			"TokenValue": "{q10}",
+			"Name": "cardUid",
+			"NameType": "string"
+		  }
+		],
+		"WebMethod": "GET"
+	  }
+}

@@ -1,0 +1,11 @@
+-i "{CURRENT_QUESTION}"    	
+-i "{BASE_DIR}1080x1080_overlay.png" 	
+-r 60 -filter_complex "[0:v]scale=1080:1080[resized];[resized]setpts=({q1:float})*PTS[speed];[speed]fade=t=in:st=0.0:d={q2c2:float}[faded];
+[faded][1:v]overlay[overlay]"
+-map "[overlay]" "{RESULT_FILE}"
+
+
+
+
+
+			

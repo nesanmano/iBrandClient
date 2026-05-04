@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      autoReload="false">
+
+  <targets>
+    <target name="main" xsi:type="File" encoding="utf-8"
+      layout="[${level}] ${longdate} [${processid}:${processname} - ${callsite:className=true:includeSourcePath=true}] => ${message} ${exception:format=ToString}"
+      fileName="main.log"
+      archiveFileName="archives/main.{#}.zip"
+      archiveEvery="Day"
+      archiveNumbering="Rolling"
+      maxArchiveFiles="7"
+    enableArchiveFileCompression="true" />
+  </targets>
+  
+  <targets>
+    <target name="rest" xsi:type="File" encoding="utf-8"
+      layout="[${level}] ${longdate} [${processid}:${processname} - ${callsite:className=true:includeSourcePath=false}] => ${message} ${exception:format=ToString}"
+      fileName="rest.log"
+      archiveFileName="archives/rest.{#}.zip"
+      archiveEvery="Day"
+      archiveNumbering="Rolling"
+      maxArchiveFiles="7"
+    enableArchiveFileCompression="true" />
+  </targets>
+  
+  <targets>
+    <target name="synchro" xsi:type="File" encoding="utf-8"
+      layout="[${level}] ${longdate} [${processid}:${processname} - ${callsite:className=true:includeSourcePath=true}] => ${message} ${exception:format=ToString}"
+      fileName="synchro.log"
+      archiveFileName="archives/synchro.{#}.zip"
+      archiveEvery="Day"
+      archiveNumbering="Rolling"
+      maxArchiveFiles="7"
+    enableArchiveFileCompression="true" />
+  </targets>
+
+	<targets>
+    <target name="cli" xsi:type="File" encoding="utf-8"
+      layout="[${level}] ${longdate} [${processid}:${processname} - ${callsite:className=true:includeSourcePath=true}] => ${message} ${exception:format=ToString}"
+      fileName="cli.log"
+      archiveFileName="archives/cli.{#}.zip"
+      archiveEvery="Day"
+      archiveNumbering="Rolling"
+      maxArchiveFiles="7"
+    enableArchiveFileCompression="true" />
+  </targets>
+
+  <rules>
+	
+	<!--
+	<logger name="NomadLogic.Common.Multimedia.ImageMagickCLI.ImageMagickCliCommand" minlevel="Debug" writeTo="cli" />
+	
+	
+	
+	<logger name="NomadLogic.Common.Util.QuestionnaireWebRequest.Emisys.*" minlevel="Debug" writeTo="main" />
+	
+	<logger name="NomadLogic.iBrandDesktop.Synchro.*" minlevel="Debug" writeTo="synchro" />
+	<logger name="NomadLogic.iBrandDesktop.Util.SubmitAction.Generic.Worker.*" minlevel="Trace" writeTo="main" />
+	<logger name="NomadLogic.iBrandDesktop.Ui.ApplicationScreen.Generic.ScanScreenAbstract" minlevel="Trace" writeTo="main" />
+	<logger name="NomadLogic.iBrandDesktop.Ui.ApplicationScreen.Generic.BarcodeEshotsScreen" minlevel="Trace" writeTo="main" />
+	<logger name="NomadLogic.Common.Util.QuestionnaireWebRequest.WebRequestFacade" minlevel="Trace" writeTo="main" />
+	<logger name="NomadLogic.iBrandDesktop.Services.IbrandDatabase" minlevel="Debug" writeTo="main" />
+	
+	<logger name="NomadLogic.iBrandDesktop.Ui.ApplicationScreen.Generic.Helpers.ImageListTransform" minlevel="Debug" writeTo="main" />
+	<logger name="NomadLogic.Common.Xangle.XangleDetectionManager" minlevel="Debug" writeTo="main"/>
+	<logger name="NomadLogic.iBrandDesktop.Ui.ApplicationScreen.Generic.RecordVideoScreen" minlevel="Trace" writeTo="main" />
+	<logger name="NomadLogic.iBrandDesktop.Synchro.UploadData" minlevel="Debug" writeTo="synchro" />
+	<logger name="NomadLogic.iBrandDesktop.Synchro.UploadDataLive" minlevel="Debug" writeTo="synchro" />
+	<logger name="NomadLogic.Common.Util.QuestionnaireWebRequest.*" minlevel="Trace" writeTo="rest" />
+	<logger name="NomadLogic.Common.Util.HttpRestUtil" minlevel="Trace" writeTo="rest" />
+	-->
+	<logger name="NomadLogic.iBrandDesktop.Services.*" minlevel="Info" writeTo="synchro" />
+    <logger name="*" minlevel="Info" writeTo="main" />
+  </rules>
+</nlog>

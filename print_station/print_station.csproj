@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A4A33836-F84A-4F1A-8E31-F6E29307DEEA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NomadLogic.PrintStation</RootNamespace>
+    <AssemblyName>NomadLogic.PrintStation</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\ibrand_client\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>nomad_logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\lib\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contest\ContestAlgorithm.cs" />
+    <Compile Include="Contest\ContestParameters.cs" />
+    <Compile Include="Contest\ContestPeriod.cs" />
+    <Compile Include="Contest\ContestRollProbability.cs" />
+    <Compile Include="Contest\ContestState.cs" />
+    <Compile Include="Contest\ContestUtil.cs" />
+    <Compile Include="CreateRespondentFromPicture.cs" />
+    <Compile Include="FeatureConfigEnum.cs" />
+    <Compile Include="GetPostsTask.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Json\FeatureConfig.cs" />
+    <Compile Include="Json\Post.cs" />
+    <Compile Include="Json\PrintStationUser.cs" />
+    <Compile Include="Json\UiFile.cs" />
+    <Compile Include="JujuPrintstation\GalleryOverview.cs" />
+    <Compile Include="JujuPrintstation\GalleryUnitElement.cs" />
+    <Compile Include="NewPrintEvent.cs" />
+    <Compile Include="PrintCount.cs" />
+    <Compile Include="PrintCountSocialCam.cs" />
+    <Compile Include="Resources\printstation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>printstation.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PrintStationUtil.cs" />
+    <Compile Include="QuestionnaireController.cs" />
+    <Compile Include="QuestionnaireUtil.cs" />
+    <Compile Include="RunningFeatureConfig.cs" />
+    <Compile Include="SendPrintCountTask.cs" />
+    <Compile Include="UiFilesUtil.cs" />
+    <Compile Include="Ui\custom\Agropur\Agropur2018Questionnaire.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\BNC\BNCQuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Brewers\BrewersQuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Brewers\EshotsAPI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Brewers\EshotsIdentifierVerificationScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Carte_Hockey\OptInScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Carte_Hockey\CarteHockeyQuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Groslch\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Hospital Foundation\HospitalFoundationShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Maizex\MaizexCheckboxScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Maizex\MaizexEliteQuestionnaire.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Mercedez2019\Mercedez2019ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Mosaique\BackgroundSelection_MAS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Mosaique\QuestionnaireScreen_MAS201901_info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\OneThirdLab\OneThirdLabCheckBoxScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\OneThirdLab\OneThirdLab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\SOP\Questionnaire_SOP201901.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Sportium\SportiumQuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Ste\QuestionnaireScreen_STE201901_info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Tangerine\TangerineQuestionnaireScreen2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Tangerine\TangerineQuestionnaireScreen3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Tangerine\TangerineQuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\generic\AbstractPrintStationScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\BMW\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Air_Canada\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ClearTextBoxDelegate.cs" />
+    <Compile Include="Ui\custom\BMW\ShareScreenBilingual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Clorox\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Clorox\QuestionnaireScreenLipstick2016.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Clorox\QuestionnaireScreen2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Clorox\QuestionnaireScreenXmas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ConfigurationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ConfigurationDialog.Designer.cs">
+      <DependentUpon>ConfigurationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\custom\Corgi\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Dulcolax\WaiverDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Dulcolax\WaiverDialog.Designer.cs">
+      <DependentUpon>WaiverDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\custom\Dynamite\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Flook\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\MakeUpForever\QuestionnaireScreenMak_2017_01_C.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\MakeUpForever\QuestionnaireScreenMak_2017_01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\QDA\MailSmsScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\QDA\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Sofina\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Sofina\QuestionnaireScreenSofina2017.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\TastyBites2016\QuestionnaireTasyBites.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\generic\BackgroundSelectionAndTransformationScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\generic\GenericScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\generic\HomeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\generic\MailScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\generic\PreviewScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\generic\RfidScannerScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\generic\ScanScreenAbstract.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\generic\SectionSkipScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\generic\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\generic\SmsScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\generic\ThanksEndScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\IAbstractPrintStationScreen.cs" />
+    <Compile Include="Ui\custom\Kijiji\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\OshKosh\LanguageSelectionScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\OshKosh\LanguageSelectionScreen.Designer.cs" />
+    <Compile Include="Ui\custom\Pampers\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\PictureDialogCloseEvent.cs" />
+    <Compile Include="Ui\PrintStationScreenConfig.cs" />
+    <Compile Include="Ui\custom\RbcSomeday2015\RBC_09.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\RbcSomeday2015\RBC_08_legal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\RbcSomeday2015\RBC_08.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\RbcSomeday2015\RBC_07.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\RbcSomeday2015\RBC_06_sms.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\RbcSomeday2015\RBC_06_mail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\RbcSomeday2015\RBC_02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\RbcSomeday2015\RBC_03.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\RbcSomeday2015\RBC_04.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\RbcSomeday2015\RBC_06.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\RemovePicturesControlEvent.cs" />
+    <Compile Include="Ui\ShowPicturesControlEvent.cs" />
+    <Compile Include="Ui\SmsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\SmsDialog.Designer.cs" />
+    <Compile Include="Ui\UserInsertedEvent.cs" />
+    <Compile Include="Ui\custom\Harry_Potter\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\HBC_Canada_Day\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\HBC_Canada_Day\WaiverDialogHBC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\HBC_Canada_Day\WaiverDialogHBC.Designer.cs">
+      <DependentUpon>WaiverDialogHBC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\custom\John_Frieda\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\John_Frieda\WaiverDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\John_Frieda\WaiverDialog.Designer.cs">
+      <DependentUpon>WaiverDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\LoginControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\LoginControl.Designer.cs">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PicturePostInfo.cs" />
+    <Compile Include="Ui\custom\Nationwide\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Nestea\EmailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Nestea\EmailDialog.Designer.cs" />
+    <Compile Include="Ui\NoInternetAccessDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\NoInternetAccessDialog.Designer.cs">
+      <DependentUpon>NoInternetAccessDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\PictureControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\PictureControl.Designer.cs">
+      <DependentUpon>PictureControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\PictureDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\PictureDialog.Designer.cs">
+      <DependentUpon>PictureDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PrintStationDatabase.cs" />
+    <Compile Include="Ui\GalleryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\GalleryControl.Designer.cs">
+      <DependentUpon>GalleryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\PopUpWinner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\PopUpWinner.Designer.cs">
+      <DependentUpon>PopUpWinner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\QuestionnaireControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\QuestionnaireControl.Designer.cs">
+      <DependentUpon>QuestionnaireControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\SearchPicturesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Stub_Hub\EmailScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\custom\Stub_Hub\OptInScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\WebBrowserScreenPrintStation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Util\ListenForFilesFromIBrandAction\AbstractAction.cs" />
+    <Compile Include="Util\ListenForFilesFromIBrandAction\Nestea.cs" />
+    <EmbeddedResource Include="Resources\printstation.fr-CA.resx" />
+    <EmbeddedResource Include="Resources\printstation.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>printstation.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ConfigurationDialog.resx">
+      <DependentUpon>ConfigurationDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\custom\Dulcolax\WaiverDialog.resx">
+      <DependentUpon>WaiverDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\custom\HBC_Canada_Day\WaiverDialogHBC.resx">
+      <DependentUpon>WaiverDialogHBC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\custom\John_Frieda\WaiverDialog.resx">
+      <DependentUpon>WaiverDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\LoginControl.resx">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\NoInternetAccessDialog.resx">
+      <DependentUpon>NoInternetAccessDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\PictureControl.resx">
+      <DependentUpon>PictureControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\PictureDialog.resx">
+      <DependentUpon>PictureDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Ui\GalleryControl.resx">
+      <DependentUpon>GalleryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="log_config.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Ui\PopUpWinner.resx">
+      <DependentUpon>PopUpWinner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\QuestionnaireControl.resx">
+      <DependentUpon>QuestionnaireControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\canon_eos_framework\canon_eos_framework.csproj">
+      <Project>{f809dbb6-e0e8-47a8-92ed-c24575576a5d}</Project>
+      <Name>canon_eos_framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ibrand_client\ibrand_client.csproj">
+      <Project>{e1ddea17-ae4b-41b8-873c-accfc87e237d}</Project>
+      <Name>ibrand_client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ibrand_common\NomadLogic.Common.csproj">
+      <Project>{441af8b0-406f-43a4-997f-091afb41be6b}</Project>
+      <Name>NomadLogic.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NomadLogic.Common.Multimedia\NomadLogic.Multimedia.csproj">
+      <Project>{A85A011E-34F9-48B4-A51D-674BBF165764}</Project>
+      <Name>NomadLogic.Multimedia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NomadLogic.Multimedia.Cli\NomadLogic.Multimedia.Cli.csproj">
+      <Project>{5B64C63A-8392-4D67-844B-3FA09545204D}</Project>
+      <Name>NomadLogic.Multimedia.Cli</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NomadLogic.Multimedia.Gpu\NomadLogic.Multimedia.Gpu.csproj">
+      <Project>{c9906ab2-02c2-47a4-abd1-022583eefcdf}</Project>
+      <Name>NomadLogic.Multimedia.Gpu</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+    <None Include="Resources\nomad_logo.png" />
+    <Content Include="nomad_logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Fichiers DLL de caméra Canon à mettre dans le répertoire final. -->
+    <ExtraDllFilesCanon Include="..\lib\EDSDK.dll;..\lib\DPPDLL.dll;..\lib\DPPlibCom.dll;..\lib\DPPRSC.dll;..\lib\EdsImage.dll; ">
+      <InProject>false</InProject>
+    </ExtraDllFilesCanon>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Core">
+      <Version>3.7.12.4</Version>
+    </PackageReference>
+    <PackageReference Include="AWSSDK.S3">
+      <Version>3.7.9.19</Version>
+    </PackageReference>
+    <PackageReference Include="JetBrains.Annotations">
+      <Version>2023.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="NLog">
+      <Version>4.7.15</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
+      <Version>6.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+    <Copy SourceFiles="@(ExtraDllFilesCanon)" DestinationFolder="$(OutputPath)" />
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NomadLogic.iBrand.Ui.ApplicationScreen.Generic.TakePictureScreenAbstract" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>EEkAQAQABCAAAAEEIAAQjAAKIQBAARAiUAIAkiYgSgA=</HashCode>
+      <FileName>Ui\ApplicationScreen\Generic\TakePictureScreenAbstract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NomadLogic.iBrand.Ui.ApplicationScreen.Generic.TakePictureManualScreen" Collapsed="true">
+    <Position X="0.5" Y="2" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AIgAAAAIAAAAAAAEAAACCAAAAABCAAAgAAAAgAAgAgA=</HashCode>
+      <FileName>Ui\ApplicationScreen\Generic\TakePictureManualScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NomadLogic.iBrand.Ui.ApplicationScreen.Generic.TakePictureAutoScreenAbstract" Collapsed="true">
+    <Position X="4.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>ACQAhQAgAAAEAABAAAAgCEQAQQAAAAAAAIYAAAAAEgA=</HashCode>
+      <FileName>Ui\ApplicationScreen\Generic\TakePictureAutoScreenAbstract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NomadLogic.iBrand.Ui.ApplicationScreen.Generic.TakePictureAutoScreen" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAgACAAAAAAAAEAAAACAAAAABCAAAgAAIAgAAAAhA=</HashCode>
+      <FileName>Ui\ApplicationScreen\Generic\TakePictureAutoScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NomadLogic.iBrand.Ui.ApplicationScreen.Generic.TakeMultiplePicturesManualScreen" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAkCAIEBAAAAAAgCQAKAABAAAAgBACAAAAAAgA=</HashCode>
+      <FileName>Ui\ApplicationScreen\Generic\TakeMultiplePicturesManualScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NomadLogic.iBrand.Ui.ApplicationScreen.Generic.TakeMultiplePicturesAutoScreen" Collapsed="true">
+    <Position X="4.25" Y="2" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>gBgAgAEEEIAAIBBFAAAACBCAQQBAACA0QAIAAkAAEgA=</HashCode>
+      <FileName>Ui\ApplicationScreen\Generic\TakeMultiplePicturesAutoScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NomadLogic.iBrand.Ui.ApplicationScreen.Generic.TakeMultiplePicturesAutoRafaleScreen" Collapsed="true">
+    <Position X="8.25" Y="2" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAIAAAgAAAACEQAAAJAAAAgAAIAAAAAAAA=</HashCode>
+      <FileName>Ui\ApplicationScreen\Generic\TakeMultiplePicturesAutoRafaleScreen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

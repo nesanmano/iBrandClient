@@ -1,0 +1,23 @@
+{
+	'executorClassName': 'NomadLogic.Common.Util.QuestionnaireWebRequest.Emisys.RestServiceConsumerEmisys',
+	'executorConfiguration': {
+		'Timeout': 2500,
+		'DoNotTestEndPointInit': true,
+		'LoginInfo': {
+			'RootApiUrl': 'https://live.byemisys.com/api',
+			'Apikey': 'OJ2Z0XlwRCrXwHhfgdzq',
+			'UserEmail': 'api@nomadlogic.com',
+			'Version': 1
+		}
+	},
+	'memberInfoMapper': [
+		{
+			'TargetClass': 'MemberIndividuInfo', 
+			'PropertyName': 'email', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		}
+	]
+}

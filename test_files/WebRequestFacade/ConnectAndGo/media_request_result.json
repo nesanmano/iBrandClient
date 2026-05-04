@@ -1,0 +1,15 @@
+[
+	{
+		"id": 3,
+		"tenant_id": 1000001,
+		"wallet_id": 306,
+		"status": "RECEIVED",
+		"url": "https://cng-experiential-koolreplay-dev.s3.us-east-2.amazonaws.com/swing_green.mp4",
+		"format": "FULL_SIZE",
+		"media_source_id": 1,
+		"media_source_name": "nomad-logic",
+		"media_type": "video/mp4",
+		"created_at": "2021-07-05T15:52:55.000000Z",
+		"updated_at": "2021-07-05T15:52:55.000000Z"
+	}
+]

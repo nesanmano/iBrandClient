@@ -1,0 +1,31 @@
+{
+	'executorClassName': 'NomadLogic.Common.Util.QuestionnaireWebRequest.Emisys.RestServiceConsumerEmisys',
+	'executorConfiguration':  {
+		'Timeout': 2500,
+		'DoNotTestEndPointInit': true,
+		'LoginInfo': {
+			'RootApiUrl': 'https://live.byemisys.com/api',
+			'Apikey': 'OJ2Z0XlwRCrXwHhfgdzq',
+			'UserEmail': 'api@nomadlogic.com',
+			'Version': 1
+		}
+	},
+	'CardFinalizeInfoMapper': {
+			'result': '0', 
+			'status': 'success', 
+			'email': 'balh@test.com', 
+			'language': 2, 
+			'username': 2,
+			'currentBalance': 2,
+			'numBasket':0,
+			'distinctPos':0,
+			'orignalBalance':0
+	},
+	'CardInitInfoMapper': {
+			'result': '0', 
+			'status': 'success', 
+			'user.id': 'balh@test.com',
+			'balance': '0'
+	}
+	
+}

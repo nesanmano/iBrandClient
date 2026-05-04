@@ -1,0 +1,1890 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E1DDEA17-AE4B-41B8-873C-ACCFC87E237D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NomadLogic.iBrandDesktop</RootNamespace>
+    <AssemblyName>ibrand_client</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>nomad_logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Awesomium.Core, Version=1.7.5.1, Culture=neutral, PublicKeyToken=e1a0d7c8071a5214, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Awesomium\Awesomium.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Awesomium.Windows.Forms, Version=1.7.5.1, Culture=neutral, PublicKeyToken=9bd24830fbe304a0, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Awesomium\Awesomium.Windows.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DirectX.Capture, Version=2.0.5497.17166, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\DirectX.Capture.dll</HintPath>
+    </Reference>
+    <Reference Include="DShowNET">
+      <HintPath>..\lib\DShowNET.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.CoreScanner, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Interop.CoreScanner.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileToDownload.cs" />
+    <Compile Include="GetRespondentLanguageDelegate.cs" />
+    <Compile Include="IBrandQuestionnaire.cs" />
+    <Compile Include="Logo.cs" />
+    <Compile Include="Modules\ManualProjectInstaller\ManualProjectInstallManager.cs" />
+    <Compile Include="Modules\ManualProjectInstaller\ManualProjectInstallResults.cs" />
+    <Compile Include="NewPrintEvent.cs" />
+    <Compile Include="OnNextPageRequestDelegate.cs" />
+    <Compile Include="PageUpDownDelegate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Datasource\AbstractDatasource.cs" />
+    <Compile Include="Datasource\DatabaseDatasource.cs" />
+    <Compile Include="Datasource\DatasourceAnswer.cs" />
+    <Compile Include="Datasource\DatasourceInfo.cs" />
+    <Compile Include="Datasource\InMemoryDatasource.cs" />
+    <Compile Include="Datasource\SubChoicesFromDatasourceAnswer.cs" />
+    <Compile Include="DeleteProjectsController.cs" />
+    <Compile Include="Equation.cs" />
+    <Compile Include="IbrandEventInfo.cs" />
+    <Compile Include="Exception\FileNotFoundException.cs" />
+    <Compile Include="Exception\NoFileException.cs" />
+    <Compile Include="Exception\SynchroException.cs" />
+    <Compile Include="Exception\UnsuportedPatternException.cs" />
+    <Compile Include="Icon.cs" />
+    <Compile Include="Operand.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="Report\IReportItem.cs" />
+    <Compile Include="Report\IReportTupleGenerator.cs" />
+    <Compile Include="Report\ReportItemQuestion.cs" />
+    <Compile Include="Report\ReportItemRespondent.cs" />
+    <Compile Include="Report\ReportTupleGeneratorAbstract.cs" />
+    <Compile Include="Report\ReportTupleGeneratorIbrandTerminal.cs" />
+    <Compile Include="Report\ReportTupleGeneratorMock.cs" />
+    <Compile Include="Report\ReportWriterCsv.cs" />
+    <Compile Include="Resources\iBrand.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>iBrand.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\RespondentEventDataDownload\DownloadWorkers\DownloadWorkerBase.cs" />
+    <Compile Include="Services\RespondentEventDataDownload\DownloadWorkers\DownloadWorkerAqualand.cs" />
+    <Compile Include="Services\RespondentEventDataDownload\IRespondentEventDataDownloadWorker.cs" />
+    <Compile Include="Services\RespondentEventDataDownload\RespondentBundleDataFile.cs" />
+    <Compile Include="Services\RespondentEventDataDownload\RespondentBundleDataGroup.cs" />
+    <Compile Include="Services\RespondentEventDataDownload\RespondentBundleDownloadReport.cs" />
+    <Compile Include="Services\RespondentEventDataDownload\RespondentBundleFinalData.cs" />
+    <Compile Include="Services\RespondentEventDataDownload\RespondentBundleRequest.cs" />
+    <Compile Include="Services\RespondentEventDataDownload\RespondentEventDataDownloadService.cs" />
+    <Compile Include="Services\FileDownloadService.cs" />
+    <Compile Include="Synchro\DownloadRestRequest\IDatabaseProjectFromServer.cs" />
+    <Compile Include="Services\SynchronizationService.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Synchro\DownloadRestRequest\DownloadManager.cs" />
+    <Compile Include="Synchro\JujuPrintstation\GalleryOverview.cs" />
+    <Compile Include="Synchro\JujuPrintstation\GalleryUnitElement.cs" />
+    <Compile Include="Synchro\JujuPrintstation\UpdateGalleryDelegate.cs" />
+    <Compile Include="Synchro\Report\DownloadProjectReport.cs" />
+    <Compile Include="Synchro\SynchFinishers\ISyncSendReport.cs" />
+    <Compile Include="Synchro\SynchFinishers\Juju\SyncTerminalToJujuSendData.cs" />
+    <Compile Include="Synchro\SynchFinishers\Juju\SyncTerminalToJujuSync.cs" />
+    <Compile Include="Synchro\SynchFinishers\SyncFinisherLocal.cs" />
+    <Compile Include="Synchro\SynchFinishers\SyncFinisherManager.cs" />
+    <Compile Include="Synchro\SynchFinishers\SyncFinisherBase.cs" />
+    <Compile Include="Synchro\SynchroFileToUpload.cs" />
+    <Compile Include="Synchro\SynchronizationMonitorUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Synchro\SynchronizationMonitorUi.Designer.cs">
+      <DependentUpon>SynchronizationMonitorUi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Synchro\TcpCommunicationProgressReport.cs" />
+    <Compile Include="Synchro\DownloadRestRequest\RestRequestElements.cs" />
+    <Compile Include="Synchro\Report\SynchronizationReport.cs" />
+    <Compile Include="Synchro\Report\UploadProjectReport.cs" />
+    <Compile Include="Ui\AbstractController.cs" />
+    <Compile Include="Ui\ApplicationScreen\ChangePageEvent.cs" />
+    <Compile Include="Ui\ApplicationScreen\ChangeScreenDelegate.cs" />
+    <Compile Include="Ui\ApplicationScreen\ChangeToPseudoModalEvent.cs" />
+    <Compile Include="Ui\ApplicationScreen\custom\360\AlphaGeneTerminal.cs" />
+    <Compile Include="Ui\ApplicationScreen\custom\360\RfidScanAlphaGene.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\360\SweepdIdTuple.cs" />
+    <Compile Include="Ui\ApplicationScreen\custom\360\SweepStakesConditions.cs" />
+    <Compile Include="Ui\ApplicationScreen\custom\360\SweepstakesDefinitions.cs" />
+    <Compile Include="Ui\ApplicationScreen\custom\360\SweepstakesResults.cs" />
+    <Compile Include="Ui\ApplicationScreen\custom\360\SweepstakesWinner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\360\SweepstakesWinner.Designer.cs">
+      <DependentUpon>SweepstakesWinner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\AFI\EshotsAPI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\AFI\EshotsIdentifierVerificationScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\AOL\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\App\Questionnaire_APP201801.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\AqualandMoravia\RfidConfirmAqualandScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Batimo2016\QuestionnaireBatimo2016.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Batimo2016\QuestionnaireBatimo2016_8.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Batimo2016\QuestionnaireBatimo2016_Generique.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Batimo2018\Batimo2018Questionnairescreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Batimo2019\Bat201901Config.cs" />
+    <Compile Include="Ui\ApplicationScreen\custom\BestBuy\HomeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\BestBuy\PreviewScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\BestBuy\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\BestBuy\TakePicturesScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\RulesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\RulesDialog.Designer.cs">
+      <DependentUpon>RulesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\ShareScreen.Designer.cs">
+      <DependentUpon>ShareScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\BronchiShield\AnswerScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\BronchiShield\DogSelectionScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\BronchiShield\HomeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\BronchiShield\QuestionScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Cartel\QuestionnaireScreen_CAR201903A.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\CaymanJack\CaymanJackQuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\CitizenRelations\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Cossette\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Cossette\QuestionnaireScreen.Designer.cs">
+      <DependentUpon>QuestionnaireScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\DfcCinephoto\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Diamond\BackgroundSelectionScreen_Dia201901.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Diamond\Dia2018TD-SpendChallenge\LifeStyleModeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Diamond\Dia2018TD-SpendChallenge\Questionnaire2018DiaTdWall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Diamond\Dia2018TD-SpendChallenge\TdCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Diamond\MailScreen_Dia201701.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Diamond\QuestionnaireBlueJays2016.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Diamond\Questionnaire_Dia201901.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Diamond\Questionnaire_Dia201801_C.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\FoodNetwork\FoodNetworkQuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\G7\Questionnaire_G7201802.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\G7_Selena\PreviewVideoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\G7_Selena\RecordVideoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\G7_Selena\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Hewitt\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Hewitt\QuestionnaireScreenVideo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\hunter\Questionnaire_HUN_2018_01.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\HydroSense\HydroPreviewAndCutVideoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\HydroSense\HydroSenseQuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\HydroSense\ScoreScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Influence\PalmBayQuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\LoyaltyOne\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\MacLaren_GMC\PreviewVideoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\MacLaren_GMC\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\MacLaren_GMC\RecordVideoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Maizex\MaizexQuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Momentum\QuestionnaireGmcStampede2017.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\NICHQ\QuestionnaireNICHQ.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\NomadLogic\Questionnaire_NOM201901.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\NomadLogic\Questionnaire_NOM201701B.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\NomadLogic\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\PCQ\QuestionnairePcq201901.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\PeneraBread\QuestionnaireAll2018.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\PublicisStarTrek\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\SCS\QuestionnaireSCS_2018_01b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\SCS\RfidScannerScreen_SCS201801.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Servus\QuestionnaireServus2017.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Simple Project\SimpleProjectQuestionnaire.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\sofina\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Square\QuestionnaireQuare2018EatDrink.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Ste\QuestionnaireScreen_STE201901_info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Ste\QuestionnaireScreen_STE201901.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Stoli\QuestionnaireIso2017_02.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Stoli\QuestionnaireStoli.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\T1DFC\PreviewVideoScreenT1DFC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\TheHive\Questionnaire_Hiv201801.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\VillageNoel\VillageQuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Young\Questionnaire_YOU201801.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\GalleryScanRequestConfig.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader360201904.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderBat201901.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderCar201903.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderCCS202001.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderDia201901.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderEsh202002.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderGes201901.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderInf201801.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderMas201901.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderNom201901.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderEsh202003.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderPar202001B.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderPar202001.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderPro202001.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderProjetSimple2.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderVil201801.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderYhp201801.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader_AQA_2021_01_B.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader_CNG01_Halloween.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader_NL4_T3.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader_NL4_T2.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader_NL4_T1.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader_NL3_T1.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader_CO1356_T1.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader_NL22_T2.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader_NL22_T1.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader_CO1356_T3.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader_CO1356_T2.cs" />
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader_ESH_2020_05.cs" />
+    <Compile Include="Ui\ApplicationScreen\custom\AqualandMoravia\RfidAqualandScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\BarcodeEshotsScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\CaptureEventListingScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\GenericUpdateServerScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\AnswerZone.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\CondensedAnswerSelectionScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\EmailScreen2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\AnimatedImageSequenceEnumTrigger.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\AnimatedImageSequenceGeneratorBasicFiles.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\AnimatedImageSequenceGeneratorFromText.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\AnimatedImageSequenceGeneratorNumbers.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\AnimatedImageSequenceQuestionnaire.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\Base\BaseBackgroundTransform.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\Gallery\GallerySourceCurrentAnswerAsDirectory.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\Gallery\GallerySourceDirectoryBase.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\Gallery\GallerySourceFixedDirectory.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\Gallery\GallerySourceFromServerRespondantData.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\Gallery\SaveGallerySelectionAsFile.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\Gallery\SaveGallerySelectionAsIndex.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\Gallery\SaveGallerySelectionFromQuestionnaireData.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\IGallerySource.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ManualFlurryConfig.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ComboboxDefinition.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\CondensedAnswerSelectionScreenConfig.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\CondensedRespondentReference.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ConditionFileTuple.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\IEvaluateScreenZones.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListTransformOptionsBaseBackground.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListTransformOptionsFirstPictureChromaKey.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListTransformOptionsChroma.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListTransformOptionsHeadSet.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListTransformOptionsImageMagick.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageTransformChromaKey.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\Base\CanvasLayer.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\Base\GenericImageTransform.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\GetImageFileDelegate.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\IAnimatedImageSequenceGenerator.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageGeneratorBasicFile.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageGeneratorBasicFileLang.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageGeneratorFromText.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListGenericTransforms.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListTransformOptions.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListTransformOptionsBundle.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListTransformOptionsDisplayOnTv.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListTransformOptionsFirstPicture.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListTransformOptionsGif.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListTransformOptionsPrint.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListTransformOptionsSocialWall.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListTransformOptionsVideo.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageStepInfo.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\Base\ImageFileLayer.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\Base\ImageFileTypeEnum.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\Base\ImageLayer.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ITextValidation.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\LanguageZone.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ManualFlurryConfigLoader.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\PreviewOverlayHelper.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\AdvancedScreenPrintConfiguration.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\QuestionnaireAnswerImage.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\QuestionnaireAnswerLabel.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenChangeOption.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenChangeOptions.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenCheckOptionGroup.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenClickZone.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenClickZoneImage.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenClickZoneText.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\IMultimediaEventItemPresentationDetail.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventGalleryRowItem.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventGalleryRowItemFileType.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemPresentationDetailBase.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemPresentationDetailConverter.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemPresentationDetailSelector.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemPresentationDetailSingle.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemPresentationQuickSelection.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventListingStateEnum.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventListRawConverter.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventListRawConverterBase.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventListRawConverterMockSingleImage.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventListRawConverterMockMultipleImages.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventVimeoPresentation.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionAnswerZones.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionCheckBoxes.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionComboBoxes.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionDebug.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionEshotsEventDayTransfer.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionFolderCopy.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionFtpFileFinder.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionGalleryFromFiles.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionButtonClicBase.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionImageCopyList.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionImpressionPutOnCanvas.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionImpressionResize.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionImpressions.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionLargeText.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\ScreenDefinitionMultimediaEventListing.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionQuestionLabels.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionPreviewQuestionImage.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionRfidMultipleScan.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionSelectionBase.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionKeyboard.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionLanguageZones.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionNavigation.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionTextBoxes.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\ScreenDefinitionTimerOptions.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenFieldAbstract.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenUiFieldAbstract.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenUtil.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\SectionSkipScreenData.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\StaticCustomFontRepository.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\RecordVideoScreenStates.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\TextboxDefinition.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\TextBoxKeyboardEventsWrapper.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\TextModificationsEnum.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\TextValidationBasic.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\TextValidationConverter.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\UserErrorEnum.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\RecordVideoWithPresentation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\GalleryScanRequestScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\RfidScannerScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\BarcodeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\AnimatedImageSequence.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\DisclaimerScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\CountdownDecoratorBasicImages.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\CountdownDecoratorImageSteps.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\IImageSelector.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\IImageGenerator.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageTransforms\ImageListTransform.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageSelectorJsonCreationConverter.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageSelectorQuestionnaire.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ImageSelectorSingle.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\PreviewOverlayInfo.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ShareScreenOptionTrigger.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ShareSocialOption.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\RecordVideoGoProScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\ScanScreenAbstract.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\SignatureScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\TakeMultiplePicturesManualScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Diamond\Dia2018TD-SpendChallenge\TdSpendWallRfidScannerScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\TakeMultiplePicturesManualFlurryScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\ThanksEndScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenCheckOption.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\SectionSkipScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ICountdownDecorator.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\PresentationVideoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\RecordVideoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\BackgroundSelectionScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\DesjardinsGreenScreen2016\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\EmailBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\EmailBox.designer.cs">
+      <DependentUpon>EmailBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\EmailDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\EmailDialog.designer.cs">
+      <DependentUpon>EmailDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\ErrorMessageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\ErrorMessageDialog.Designer.cs">
+      <DependentUpon>ErrorMessageDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\CustomClickAction.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\DebugTakePicturesScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\HomeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\MailScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\PreviewScreenAbstract.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\PreviewAndCutVideoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\RecordVideoSonyScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\SmsScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\TakePictureManualScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\TakePictureScreenAbstract.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\TakePictureAutoScreenAbstract.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\TakeMultiplePicturesAutoFlurryScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ThumbnailCreationParameters.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\WebBrowserScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\PreviewScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\TakePictureAutoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\TakeMultiplePicturesAutoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\HarryPotter\BackgroundScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\HarryPotter\BeforeRecordVideoPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\HarryPotter\InformationPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\HarryPotter\DisclaimerScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\HarryPotter\HomeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\HarryPotter\PreviewScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\HarryPotter\RecordScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\HarryPotter\RecordScreen2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\HarryPotter\TakePictureScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\HarryPotter\ThanksScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Hornitos\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Hornitos\TakePicturesScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\AbstractPseudoModalScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\IAbstractScreen.cs" />
+    <Compile Include="Ui\ApplicationScreen\custom\InfoPresse\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\InfoPresse\TakePictureScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Iris\HomeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Iris\IdentifySideviewMetrics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Iris\05_IdentifySideviewMetrics.Designer.cs">
+      <DependentUpon>IdentifySideviewMetrics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Iris\TakePictureScreenProfil.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Iris\IdentifyEyeMetrics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Iris\03_IdentifyEyeMetrics.Designer.cs">
+      <DependentUpon>IdentifyEyeMetrics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Iris\TakePictureScreenFace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\KijijiHalloweenParty\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Manic5\AfterVideoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Manic5\HomeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Manic5\OptInScreenVideo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Manic5\OptInScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Manic5\EmailScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Manic5\03_EmailScreen.designer.cs">
+      <DependentUpon>EmailScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Manic5\BackgroundScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Manic5\PreviewScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Manic5\TakePicturesScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Manic5\ShareScreenManic5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Manic5\07_ShareScreen.Designer.cs">
+      <DependentUpon>ShareScreenManic5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Manic5\BeforeRecordVideo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Manic5\BeginVideoPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Manic5\RecordScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\MonsterEnergy\HomeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\MonsterEnergy\PreviewScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\MonsterEnergy\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\ParcCanada\OptInScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\ParcCanada\LanguageSelectionScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\ParcCanada\01_LanguageSelection.Designer.cs">
+      <DependentUpon>LanguageSelectionScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\ParcCanada\CodeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\ParcCanada\02_CodeScreen.designer.cs">
+      <DependentUpon>CodeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\ParcCanada\EmailScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\ParcCanada\04_EmailScreen.designer.cs">
+      <DependentUpon>EmailScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\ParcCanada\TakeSinglePictureScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\ParcCanada\05_TakePictureScreen.Designer.cs">
+      <DependentUpon>TakeSinglePictureScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\ParcCanada\PreviewScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\ParcCanada\06_PreviewScreen.Designer.cs">
+      <DependentUpon>PreviewScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\ParcCanada\ShareScreenParcCanada.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\ParcCanada\07_ShareScreen.Designer.cs">
+      <DependentUpon>ShareScreenParcCanada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\IChangeLanguage.cs" />
+    <Compile Include="Ui\ApplicationScreen\IFullscreenLoader.cs" />
+    <Compile Include="Ui\ApplicationScreen\IOnLoad.cs" />
+    <Compile Include="Ui\ApplicationScreen\MockScreen.cs" />
+    <Compile Include="Ui\ApplicationScreen\PasswordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\PasswordDialog.designer.cs">
+      <DependentUpon>PasswordDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Permatex\HomeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Permatex\PreviewScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Permatex\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Permatex\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Permatex\TakePictureScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\RadioCanada\BackgroundSelection1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\RadioCanada\BackgroundSelection2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\RadioCanada\MailScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\RadioCanada\PreviewScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\RadioCanada\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\RadioCanada\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\RadioCanada\SmsScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\RadioCanada\TakePicturesScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\RadioCanada\ThanksScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Scotia\ShareScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\GenericScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\ShowFirstScreenDelegate.cs" />
+    <Compile Include="Ui\ApplicationScreen\SimpleProjectConfig.cs" />
+    <Compile Include="Ui\ApplicationScreen\SmsConfirmDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\SmsConfirmDialog.designer.cs">
+      <DependentUpon>SmsConfirmDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\SmsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\SmsDialog.designer.cs">
+      <DependentUpon>SmsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\ScreenConfig.cs" />
+    <Compile Include="Ui\ApplicationScreen\TouchModeConfigurationDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\TouchModeConfigurationDlg.designer.cs">
+      <DependentUpon>TouchModeConfigurationDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\VetGamesBooth\HomeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\VetGamesBooth\PreviewScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\VetGamesBooth\QuestionnaireScreen2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\VetGamesBooth\QuestionnaireScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\VetGamesBooth\TakePictureScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\BackUp.cs" />
+    <Compile Include="Ui\ChangeLanguageEventHandler.cs" />
+    <Compile Include="Ui\Choice\CameraRingCanonMultipleShotTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\CaptureAnimatedTextBoxCanon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\ChoiceCameraRingCanonMultiple.cs" />
+    <Compile Include="Ui\Choice\ChoicePhotoCaptureAnimatedCanon.cs" />
+    <Compile Include="Ui\Choice\ChoiceTimer.cs" />
+    <Compile Include="Ui\Choice\ChoiceTimerTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\ChoiceTimerTextBox.Designer.cs">
+      <DependentUpon>ChoiceTimerTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Choice\ChoiceVideoGallery.cs" />
+    <Compile Include="Ui\Choice\SetAnswerDelegate.cs" />
+    <Compile Include="Ui\Choice\VideoGalleryTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\VideoGalleryTextBox.Designer.cs">
+      <DependentUpon>VideoGalleryTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Choice\VideoTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\VideoTextBox.Designer.cs">
+      <DependentUpon>VideoTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\CustomPrintstationAddressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\CustomPrintstationAddressDialog.Designer.cs">
+      <DependentUpon>CustomPrintstationAddressDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ExportActivityDataDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ExportActivityDataDialog.Designer.cs">
+      <DependentUpon>ExportActivityDataDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ImageListTransformConfigDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ImageListTransformConfigDialog.Designer.cs">
+      <DependentUpon>ImageListTransformConfigDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\IPreviewDialogTransformationReceiver.cs" />
+    <Compile Include="Ui\LivePreviewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\LivePreviewDialog.Designer.cs">
+      <DependentUpon>LivePreviewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\PaginationUiElements.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemPresentation.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemVimeoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemVimeoDialog.Designer.cs">
+      <DependentUpon>MultimediaEventItemVimeoDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemSingleDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemSingleDialog.Designer.cs">
+      <DependentUpon>MultimediaEventItemSingleDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemSelectorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemSelectorDialog.Designer.cs">
+      <DependentUpon>MultimediaEventItemSelectorDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\PasswordHandler.cs" />
+    <Compile Include="Ui\PhotoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\PhotoControl.Designer.cs">
+      <DependentUpon>PhotoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\PreviewDialogTransformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\PreviewDialogTransformation.Designer.cs">
+      <DependentUpon>PreviewDialogTransformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Question\OnAnswerChangedDelegate.cs" />
+    <Compile Include="Ui\Question\QuestionFileBase.cs" />
+    <Compile Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventGalleryRow.cs" />
+    <Compile Include="Ui\Question\QuestionTextIdentifier.cs" />
+    <Compile Include="Ui\ScreenModel\AbstractScreenModel.cs" />
+    <Compile Include="Ui\ScreenModel\CameraInputScreenModel.cs" />
+    <Compile Include="Ui\ScreenModel\DataInputScreenModel.cs" />
+    <Compile Include="Ui\ScreenModel\DataOutputScreenModel.cs" />
+    <Compile Include="Ui\ScreenModel\InputModel.cs" />
+    <Compile Include="Ui\ScreenModel\LanguageScreenModel.cs" />
+    <Compile Include="Ui\ScreenModel\PrintScreenModel.cs" />
+    <Compile Include="Ui\ScreenModel\SaveAnswer.cs" />
+    <Compile Include="Ui\Synchro\GetProject.cs" />
+    <Compile Include="Ui\Synchro\New UI\GetProjectTerminal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Synchro\SynchroDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Synchro\New UI\GetProjectTerminal.Designer.cs">
+      <DependentUpon>GetProjectTerminal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Synchro\SynchroDlg.designer.cs">
+      <DependentUpon>SynchroDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\VideoGallery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\VideoGallery.Designer.cs">
+      <DependentUpon>VideoGallery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\VideoSelectionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\VideoSelectionDialog.Designer.cs">
+      <DependentUpon>VideoSelectionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\VlcVideoCountdownInfo.cs" />
+    <Compile Include="Util\BarcodeScanner\ScanEvent.cs" />
+    <Compile Include="Util\BarcodeScanner\ScanEventHandler.cs" />
+    <Compile Include="Util\ConstantsPhotoBooth.cs" />
+    <Compile Include="Util\EventCallbackDelegate.cs" />
+    <Compile Include="Util\FileFound.cs" />
+    <Compile Include="Util\FullScreenImageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Util\IBrandQuestionnaireLoader.cs" />
+    <Compile Include="Util\ICurrentQuestionnaireSource.cs" />
+    <Compile Include="Util\JujuQuestionnaireLoader.cs" />
+    <Compile Include="Util\LeaderBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Util\LeaderBoard.Designer.cs">
+      <DependentUpon>LeaderBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\MediaStateChanged.cs" />
+    <Compile Include="Util\OnTransformationAndUploadFinishedDelegate.cs" />
+    <Compile Include="Util\OnUploadFinishedDelegate.cs" />
+    <Compile Include="Util\Participant.cs" />
+    <Compile Include="Util\ParticipantComparer.cs" />
+    <Compile Include="Util\PictureController.cs" />
+    <Compile Include="Util\ProgressBarMaxMin.cs" />
+    <Compile Include="Util\ProgressBarStep.cs" />
+    <Compile Include="Util\SimpleProjectConfigLoader.cs" />
+    <Compile Include="Util\Social\Facebook\ShareDirectUrlToFacebookPseudomodal.cs" />
+    <Compile Include="Util\Social\Facebook\ShareUrlToFacebookPseudomodal.cs" />
+    <Compile Include="Util\Social\Twitter\UploadPictureToTwitterLeNomadPseudomodal.cs" />
+    <Compile Include="Util\Social\Vimeo\Chunks.cs" />
+    <Compile Include="Util\Social\Vimeo\OAuthSignatureType.cs" />
+    <Compile Include="Util\Social\Vimeo\OnUploadFinishedDelegate.cs" />
+    <Compile Include="Util\Social\Vimeo\OnUploadOnVimeoFinishedDelegate.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\ISubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\ISubmitActionCopyToBackUp.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\ISubmitActionSendFilesToFtp.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\OnCompleteStopDelegate.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\OnRespondentFinishedDelegate.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\OnSavedDelegate.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\PairOfPoolExecute.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\SubmitActionCreateVideoUtil.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\SubmitActionWorkerNextStepInfo.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\SubmitActionWorkerTask.cs" />
+    <Compile Include="Util\SubmitAction\Degrees6CardSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\CottageSubmitActionWorker.cs" />
+    <Compile Include="Util\SubmitAction\Esh2018Car03SubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\CopyImageToDisplayOnTvAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\SendMultimediaToEshotsSubmitActionBase.cs" />
+    <Compile Include="Util\SubmitAction\Generic\SendImageToEshotsSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\SendVideoToEshotsSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\SplitRespondentFromDynamicHeaderSource.cs" />
+    <Compile Include="Util\SubmitAction\Generic\Worker\CardSubmitActionWorker.cs" />
+    <Compile Include="Util\SubmitAction\Generic\Worker\GifTransformationSubmitActionWorker.cs" />
+    <Compile Include="Util\SubmitAction\Generic\Worker\PictureTransformSubmitActionWorker.cs" />
+    <Compile Include="Util\SubmitAction\Generic\Worker\SendFilesToFtpWorker.cs" />
+    <Compile Include="Util\SubmitAction\CossetteLaRondeSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\Worker\CopyImageToDisplayOnTv.cs" />
+    <Compile Include="Util\SubmitAction\Generic\Worker\SendImageToEshotsWorker.cs" />
+    <Compile Include="Util\SubmitAction\Generic\Worker\SendVideoToEshotsWorker.cs" />
+    <Compile Include="Util\SubmitAction\Generic\Worker\SendMultimediaToEshotsWorkerBase.cs" />
+    <Compile Include="Util\SubmitAction\Generic\Worker\SendToFtpSubmitActionWorkerLegacy.cs" />
+    <Compile Include="Util\SubmitAction\IrisLunetteSubmitActionWorker.cs" />
+    <Compile Include="Util\SubmitAction\KiaNba2015SubmitActionWorker.cs" />
+    <Compile Include="Util\SubmitAction\KiaNba2015SubmitActionWorkerStep2.cs" />
+    <Compile Include="Util\SubmitAction\NovartisVideoBoothSubmitActionWorker.cs" />
+    <Compile Include="Util\SubmitAction\PictureTransformSubmitActionWorker.cs" />
+    <Compile Include="Util\SubmitAction\PalmBay2018SubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\FoodNetworkGifAndSendPsSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\FfmpegVideoAndUploadToVimeoSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\Worker\CopyToBackUpSubmitActionWorker.cs" />
+    <Compile Include="Util\SubmitAction\Generic\Worker\CreateVideoWorker.cs" />
+    <Compile Include="Util\SubmitAction\Nichq2017VideoSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\ISubmitActionPictureTransformation.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\ISubmitActionSendFilesToPrintstation.cs" />
+    <Compile Include="Util\SubmitAction\Generic\CreateFileBundleSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\AbstractSubmitActionPictureTransformation.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\AbstractSubmitActionSendFilesToPrintstation.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\SubmitActionWorkerAbstract.cs" />
+    <Compile Include="Util\SubmitAction\BlueJays2016CardSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\CottageSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\CardSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\AbstractCreateVideoAndSendSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\Worker\BundleCameraRingFilesWorker.cs" />
+    <Compile Include="Util\SubmitAction\Generic\Worker\SendVideoToVimeoWorker.cs" />
+    <Compile Include="Util\SubmitAction\HewittVideoSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\SofinaStarWars2017SubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\StampedeCalgary2016GifSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\StampedeCalgary2016VideoSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\HarleyDavidsonSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\PosteCanadaStarTrekSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\FoodNetworkBaconFestSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\G7SelenaSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\GifTransformationSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\SendFilesToPrintstationSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\CopyToBackUpSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\SendToFtpSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\PictureTransformSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\Generic\Worker\SendFilesToPrintstationWorker.cs" />
+    <Compile Include="Util\SubmitAction\IrisLunetteSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\ISubmitActionWorker.cs" />
+    <Compile Include="Util\SubmitAction\KiaCameraRing.cs" />
+    <Compile Include="Util\SubmitAction\KiaNBA2015SubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\SubmitActionWorkerPool.cs" />
+    <Compile Include="Util\SubmitAction\NovartisVideoBoothSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\DfcMarathon2016SubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\SofinaHockeyCardSubmitAction.cs" />
+    <Compile Include="Util\SubmitAction\T1DFCSubmitAction.cs" />
+    <Compile Include="Util\VlcCallbackArgs.cs" />
+    <Compile Include="Util\VlcEventType.cs" />
+    <Compile Include="Util\VlcException.cs" />
+    <Compile Include="Util\VlcInstance.cs" />
+    <Compile Include="Util\VlcMedia.cs" />
+    <Compile Include="Util\VlcMediaPlayer.cs" />
+    <Compile Include="Util\VlcState.cs" />
+    <Compile Include="Util\WebBrowserHelper.cs" />
+    <Compile Include="Util\ZipCodeEntry.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\iBrand.fr-CA.resx">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\iBrand.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>iBrand.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Synchro\SynchronizationMonitorUi.resx">
+      <DependentUpon>SynchronizationMonitorUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ApplicationScreen\AbstractScreen.resx">
+      <DependentUpon>AbstractScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ApplicationScreen\custom\360\SweepstakesWinner.resx">
+      <DependentUpon>SweepstakesWinner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ApplicationScreen\custom\Bethenny\RulesDialog.resx">
+      <DependentUpon>RulesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ApplicationScreen\EmailBox.resx">
+      <DependentUpon>EmailBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ApplicationScreen\EmailDialog.resx">
+      <DependentUpon>EmailDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ApplicationScreen\PasswordDialog.resx">
+      <DependentUpon>PasswordDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ApplicationScreen\SmsConfirmDialog.resx">
+      <DependentUpon>SmsConfirmDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ApplicationScreen\SmsDialog.resx">
+      <DependentUpon>SmsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ApplicationScreen\TouchModeConfigurationDlg.resx">
+      <DependentUpon>TouchModeConfigurationDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Choice\CameraRingCanonTextBox.resx">
+      <DependentUpon>CameraRingCanonTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Choice\ChoiceTimerTextBox.resx">
+      <DependentUpon>ChoiceTimerTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Choice\CaptureTextBoxCanon.resx">
+      <DependentUpon>CaptureTextBoxCanon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Choice\PhotoTextBox.resx">
+      <DependentUpon>PhotoTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Choice\VideoCaptureCanonTextBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VideoCaptureCanonTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Choice\VideoGalleryTextBox.resx">
+      <DependentUpon>VideoGalleryTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Choice\VideoTextBox.resx">
+      <DependentUpon>VideoTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\CustomPrintstationAddressDialog.resx">
+      <DependentUpon>CustomPrintstationAddressDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ExportActivityDataDialog.resx">
+      <DependentUpon>ExportActivityDataDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\HtmlPopupDlg.resx">
+      <DependentUpon>HtmlPopupDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ImageListTransformConfigDialog.resx">
+      <DependentUpon>ImageListTransformConfigDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\LivePreviewDialog.resx">
+      <DependentUpon>LivePreviewDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Choice\VideoCaptureTextBox.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VideoCaptureTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Choice\VideoCaptureCanonTextBox2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VideoCaptureCanonTextBox2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemVimeoDialog.resx">
+      <DependentUpon>MultimediaEventItemVimeoDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemSingleDialog.resx">
+      <DependentUpon>MultimediaEventItemSingleDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ApplicationScreen\Generic\Helpers\ScreenDefinitions\MultimediaEventListing\MultimediaEventItemSelectorDialog.resx">
+      <DependentUpon>MultimediaEventItemSelectorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\PhotoControl.resx">
+      <DependentUpon>PhotoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\PreviewDialogTransformation.resx">
+      <DependentUpon>PreviewDialogTransformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ScreensContainer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ScreensContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ScreenControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ScreenControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ShowPictureDlg.resx">
+      <DependentUpon>ShowPictureDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\SetDateDlg.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SetDateDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\AboutDlg.resx">
+      <DependentUpon>AboutDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Choice\CheckTextBox.resx">
+      <DependentUpon>CheckTextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Choice\DateComboBoxes.resx">
+      <DependentUpon>DateComboBoxes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Choice\EmailTextBox.resx">
+      <DependentUpon>EmailTextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Choice\RadioTextBox.resx">
+      <DependentUpon>RadioTextBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\ConfigurationDlg.resx">
+      <DependentUpon>ConfigurationDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\DeleteProjectsDlg.resx">
+      <DependentUpon>DeleteProjectsDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\InputDlg.resx">
+      <DependentUpon>InputDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\KioskForm.resx">
+      <DependentUpon>KioskForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\LogoControl.resx">
+      <DependentUpon>LogoControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\StartProjectDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StartProjectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Synchro\GetProjectDlg.resx">
+      <DependentUpon>GetProjectDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Synchro\New UI\GetProjectTerminal.resx">
+      <DependentUpon>GetProjectTerminal.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Ui\Synchro\SynchroDlg.resx">
+      <DependentUpon>SynchroDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\VideoGallery.resx">
+      <DependentUpon>VideoGallery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\VideoSelectionDialog.resx">
+      <DependentUpon>VideoSelectionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Util\FullScreenImageViewer.resx">
+      <DependentUpon>FullScreenImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Util\LeaderBoard.resx">
+      <DependentUpon>LeaderBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include=".editorconfig" />
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Questionnaire.cs" />
+    <Compile Include="QuestionnaireInfo.cs" />
+    <Compile Include="Respondent.cs" />
+    <Compile Include="Services\IBrandDatabase.cs" />
+    <Compile Include="SetDateController.cs" />
+    <Compile Include="Synchro\IUiSynchro.cs" />
+    <Compile Include="Ui\ApplicationScreen\AbstractScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\AbstractScreen.designer.cs">
+      <DependentUpon>AbstractScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\ChanceScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\ChanceScreen.Designer.cs">
+      <DependentUpon>ChanceScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\ConfessionScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\ConfessionScreen.Designer.cs">
+      <DependentUpon>ConfessionScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\FilterScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\FilterScreen.Designer.cs">
+      <DependentUpon>FilterScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\HomeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\HomeScreen.Designer.cs">
+      <DependentUpon>HomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\PressToStartScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\PressToStartScreen.Designer.cs">
+      <DependentUpon>PressToStartScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\PreviewScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\PreviewScreen.Designer.cs">
+      <DependentUpon>PreviewScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\QuestionnaireScreen1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\QuestionnaireScreen1.Designer.cs">
+      <DependentUpon>QuestionnaireScreen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\QuestionnaireScreen2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\QuestionnaireScreen2.Designer.cs">
+      <DependentUpon>QuestionnaireScreen2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\RecordScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\RecordScreen.Designer.cs">
+      <DependentUpon>RecordScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\VideoScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Bethenny\VideoScreen.Designer.cs">
+      <DependentUpon>VideoScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Natrel\InformationScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Natrel\InformationScreen.Designer.cs">
+      <DependentUpon>InformationScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Natrel\WelcomeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ApplicationScreen\custom\Natrel\WelcomeScreen.Designer.cs">
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Choice\CameraRingCanonTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\CameraRingCanonTextBox.Designer.cs">
+      <DependentUpon>CameraRingCanonTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Choice\ChoiceCameraRing.cs" />
+    <Compile Include="Ui\Choice\ChoiceCameraRingCanon.cs" />
+    <Compile Include="Ui\Choice\CaptureTextBoxCanon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\CaptureTextBoxCanon.Designer.cs">
+      <DependentUpon>CaptureTextBoxCanon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Choice\ChoicePhoto.cs" />
+    <Compile Include="Ui\Choice\ChoicePhotoCaptureCanon.cs" />
+    <Compile Include="Util\BarcodeScanner\IBarcodeScannerListener.cs" />
+    <Compile Include="Ui\Choice\ChoiceVideoCaptureCanon.cs" />
+    <Compile Include="Ui\Choice\PhotoTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\PhotoTextBox.Designer.cs">
+      <DependentUpon>PhotoTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Choice\VideoCaptureCanonTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\VideoCaptureCanonTextBox.Designer.cs">
+      <DependentUpon>VideoCaptureCanonTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\HtmlPopupDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\HtmlPopupDlg.Designer.cs">
+      <DependentUpon>HtmlPopupDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Question\QuestionCameraRing.cs" />
+    <Compile Include="Ui\Choice\ChoiceVideo.cs" />
+    <Compile Include="Ui\Choice\ChoiceVideoCapture.cs" />
+    <Compile Include="Ui\Choice\VideoCaptureTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\VideoCaptureTextBox.Designer.cs">
+      <DependentUpon>VideoCaptureTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Choice\VideoCaptureCanonTextBox2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\VideoCaptureCanonTextBox2.Designer.cs">
+      <DependentUpon>VideoCaptureCanonTextBox2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ScreenController.cs" />
+    <Compile Include="Ui\ScreensContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ScreensContainer.Designer.cs">
+      <DependentUpon>ScreensContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ScreenControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\ScreenControl.Designer.cs">
+      <DependentUpon>ScreenControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Question\QuestionVideo.cs" />
+    <Compile Include="Ui\IScreenElement.cs" />
+    <Compile Include="Ui\ScreenView.cs" />
+    <Compile Include="Ui\ShowPictureDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ShowPictureDlg.Designer.cs">
+      <DependentUpon>ShowPictureDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\SetDateDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\SetDateDlg.Designer.cs">
+      <DependentUpon>SetDateDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartProjectController.cs" />
+    <Compile Include="Synchronization.cs" />
+    <Compile Include="Synchro\Attribute.cs" />
+    <Compile Include="Synchro\Stream\ClearNetworkStream.cs" />
+    <Compile Include="Synchro\Stream\SecureNetworkStream.cs" />
+    <Compile Include="Synchro\Stream\ISynchroStream.cs" />
+    <Compile Include="Synchro\SynchFinishers\Juju\SyncTerminalToJujuBase.cs" />
+    <Compile Include="UIStyle.cs" />
+    <Compile Include="Ui\AboutDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\AboutDlg.designer.cs">
+      <DependentUpon>AboutDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Choice\CheckTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\CheckTextBox.designer.cs">
+      <DependentUpon>CheckTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Choice\Choice.cs" />
+    <Compile Include="Ui\Choice\ChoiceCheck.cs" />
+    <Compile Include="Ui\Choice\ChoiceCombo.cs" />
+    <Compile Include="Ui\Choice\ChoiceDate.cs" />
+    <Compile Include="Ui\Choice\ChoiceEmail.cs" />
+    <Compile Include="Ui\Choice\ChoiceRadio.cs" />
+    <Compile Include="Ui\Choice\ChoiceSignature.cs" />
+    <Compile Include="Ui\Choice\ChoiceText.cs" />
+    <Compile Include="Ui\Choice\DateComboBoxes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\DateComboBoxes.designer.cs">
+      <DependentUpon>DateComboBoxes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Choice\EmailTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\EmailTextBox.designer.cs">
+      <DependentUpon>EmailTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Choice\RadioTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\RadioTextBox.designer.cs">
+      <DependentUpon>RadioTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Choice\SignatureControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ui\ConfigurationDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\ConfigurationDlg.designer.cs">
+      <DependentUpon>ConfigurationDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\DeleteProjectsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\DeleteProjectsDlg.designer.cs">
+      <DependentUpon>DeleteProjectsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\InputDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\InputDlg.designer.cs">
+      <DependentUpon>InputDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\KioskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\KioskForm.designer.cs">
+      <DependentUpon>KioskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Link.cs" />
+    <Compile Include="Ui\LogoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\LogoControl.designer.cs">
+      <DependentUpon>LogoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Question\Question.cs" />
+    <Compile Include="Ui\Question\QuestionAnswersValidationBase.cs" />
+    <Compile Include="Ui\Question\QuestionAudio.cs" />
+    <Compile Include="Ui\Question\QuestionCheck.cs" />
+    <Compile Include="Ui\Question\QuestionCombo.cs" />
+    <Compile Include="Ui\Question\QuestionEmail.cs" />
+    <Compile Include="Ui\Question\QuestionPhoto.cs" />
+    <Compile Include="Ui\Question\QuestionPhotoText.cs" />
+    <Compile Include="Ui\Question\QuestionRadio.cs" />
+    <Compile Include="Ui\Question\QuestionSignature.cs" />
+    <Compile Include="Ui\Question\QuestionText.cs" />
+    <Compile Include="Ui\SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\SplashForm.designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\StartProjectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\StartProjectDialog.Designer.cs">
+      <DependentUpon>StartProjectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Synchro\GetProjectDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Synchro\GetProjectDlg.designer.cs">
+      <DependentUpon>GetProjectDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\TouchScreenController.cs" />
+    <Compile Include="Ui\TouchScreenControllerWhitoutProject.cs" />
+    <Compile Include="Util\Social\Facebook\FacebookToken.cs" />
+    <Compile Include="Util\FTP.cs" />
+    <Compile Include="Util\Generate5DigitsCode.cs" />
+    <Compile Include="Util\LookForCanonVideoFiles.cs" />
+    <Compile Include="Util\NikonD5000OneCamera.cs" />
+    <Compile Include="Util\NikonD5000.cs" />
+    <Compile Include="Util\PatternMatcher.cs" />
+    <Compile Include="Util\PKCSKeyGenerator.cs" />
+    <Compile Include="Util\PostalCodeDatabase.cs" />
+    <Compile Include="Util\ProjectAccessor.cs" />
+    <Compile Include="Util\QuestionnaireControllerAccessor.cs" />
+    <Compile Include="Util\QuestionnaireLoaderAbstract.cs" />
+    <Compile Include="Util\ScreensControllerAccessor.cs" />
+    <Compile Include="Util\SubmitAction\BaseClasses\AbstractSubmitAction.cs" />
+    <Compile Include="Util\BarcodeScanner\ScanEventArgs.cs" />
+    <Compile Include="Util\BarcodeScanner\SymbolScanner.cs" />
+    <Compile Include="Util\SyncEvents.cs" />
+    <Compile Include="Util\TimeZoneInformation.cs" />
+    <Compile Include="Util\UiLoader.cs" />
+    <Compile Include="Util\Social\Vimeo\UploadVideoOnVimeo.cs" />
+    <Compile Include="Util\Social\Vimeo\AdvancedAPI.cs" />
+    <Compile Include="Util\Social\Vimeo\OAuthBase.cs" />
+    <Compile Include="Util\Social\Vimeo\Person.cs" />
+    <Compile Include="Util\Social\Vimeo\Thumbnail.cs" />
+    <Compile Include="Util\Social\Vimeo\Ticket.cs" />
+    <Compile Include="Util\Social\Vimeo\UploadedVideoMap.cs" />
+    <Compile Include="Util\Social\Vimeo\UploadVideoToVimeo.cs" />
+    <Compile Include="Util\Social\Vimeo\VimeoClient.cs" />
+    <Compile Include="Util\LibVlc.cs" />
+    <Compile Include="Util\WorkingArea.cs" />
+    <Compile Include="Util\XMLConstants.cs" />
+    <None Include="TakePictureClasses.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="log_config.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="nomad.ico" />
+    <Content Include="nomad_logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Fichiers DLL de caméra Canon à mettre dans le répertoire final. -->
+    <ExtraDllFilesCanon Include="..\lib\EDSDK.dll;..\lib\DPPDLL.dll;..\lib\DPPlibCom.dll;..\lib\DPPRSC.dll;..\lib\EdsImage.dll; ">
+      <InProject>false</InProject>
+    </ExtraDllFilesCanon>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\canon_eos_framework\canon_eos_framework.csproj">
+      <Project>{f809dbb6-e0e8-47a8-92ed-c24575576a5d}</Project>
+      <Name>canon_eos_framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GoPro.Hero\GoPro.Hero.csproj">
+      <Project>{e3c01ad3-78c3-41d5-bb0b-ce54ccfee038}</Project>
+      <Name>GoPro.Hero</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ibrand_common\NomadLogic.Common.csproj">
+      <Project>{441af8b0-406f-43a4-997f-091afb41be6b}</Project>
+      <Name>NomadLogic.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NETFx\src\netfx\netfx.csproj">
+      <Project>{4b7e594f-c7a2-4667-a951-1161720019e1}</Project>
+      <Name>netfx</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NomadLogic.Common.Multimedia\NomadLogic.Multimedia.csproj">
+      <Project>{A85A011E-34F9-48B4-A51D-674BBF165764}</Project>
+      <Name>NomadLogic.Multimedia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NomadLogic.Multimedia.Cli\NomadLogic.Multimedia.Cli.csproj">
+      <Project>{5b64c63a-8392-4d67-844b-3fa09545204d}</Project>
+      <Name>NomadLogic.Multimedia.Cli</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NomadLogic.Multimedia.Gpu\NomadLogic.Multimedia.Gpu.csproj">
+      <Project>{c9906ab2-02c2-47a4-abd1-022583eefcdf}</Project>
+      <Name>NomadLogic.Multimedia.Gpu</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\sony_camera_api\sony_camera_api.csproj">
+      <Project>{972be82f-401f-4107-b426-1654dee1c175}</Project>
+      <Name>sony_camera_api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Video.DirectShow\Video.DirectShow.csproj">
+      <Project>{26cd2ce7-ff63-4669-83b0-7d9c8f3408ee}</Project>
+      <Name>Video.DirectShow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Synchro\SynchFinishers\Kapture\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AForge.Controls">
+      <Version>2.2.5</Version>
+    </PackageReference>
+    <PackageReference Include="AWSSDK.Core">
+      <Version>3.7.12.4</Version>
+    </PackageReference>
+    <PackageReference Include="AWSSDK.S3">
+      <Version>3.7.9.19</Version>
+    </PackageReference>
+    <PackageReference Include="C5">
+      <Version>2.5.3</Version>
+    </PackageReference>
+    <PackageReference Include="HtmlAgilityPack">
+      <Version>1.11.43</Version>
+    </PackageReference>
+    <PackageReference Include="JetBrains.Annotations">
+      <Version>2023.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="MCollections">
+      <Version>1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Nito.AsyncEx">
+      <Version>5.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="NLog">
+      <Version>4.7.15</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="TweetSharp">
+      <Version>2.3.1</Version>
+    </PackageReference>
+    <PackageReference Include="Vlc.DotNet.Forms">
+      <Version>3.1.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="AfterBuild">
+    <Copy SourceFiles="@(ExtraDllFilesCanon)" DestinationFolder="$(OutputPath)" />
+  </Target>
+</Project>

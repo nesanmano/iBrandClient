@@ -1,0 +1,9 @@
+{
+  "Url": "192.168.3.111",
+  "User": "local_test",
+  "Password": "1234",
+  "MaxSearchTime": "00:00:10",
+  "Port": 22,
+  "SshPrivateKeyFilePath": "private_ftp.ppk",
+  "SshHostFingerprint": "ssh-rsa 2048 ig7ZFUcDJKKg+SoqGtO6qU24QpT6Fmp3vbfVetfQkMk="
+}

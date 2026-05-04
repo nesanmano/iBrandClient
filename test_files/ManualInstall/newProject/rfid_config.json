@@ -1,0 +1,7 @@
+{
+	"TimeBetweenSameCardRead": "00:05:00",
+	"TimeBetweenRead": "00:00:03",
+	"ScanTriggerOnCharacterNumber": 0,
+	"ScanTriggerOnEnter": true,
+	"AllowDirectHexData": true
+}

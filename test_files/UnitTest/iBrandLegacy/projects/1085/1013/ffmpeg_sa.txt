@@ -1,0 +1,7 @@
+-loop 1 -i "{q7}" 
+-i {BASE_DIR}"GIF_%d_en.png" 
+-filter_complex "
+[0:v]scale=-2:1598,crop=1068:1598[initial];
+[initial][over] overlay=0:0" 
+-c:v libx264 -crf 10 -t 3 -pix_fmt yuv420p [final]
+-map "[final]" -an "{RESULT_FILE}"

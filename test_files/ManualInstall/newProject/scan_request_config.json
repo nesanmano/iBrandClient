@@ -1,0 +1,8 @@
+{
+  "terminal_id": 294,
+  "questionnaire_id": 229,
+  "dynamic_data_filters": [
+    "roaming",
+    "ride"
+  ]
+}

@@ -1,0 +1,6 @@
+# Text generation
+convert -size 640x -background transparent -font "{q1c4}" -pointsize 40 -gravity west -depth 8 -colorspace srgb -type TrueColorAlpha -fill black -stroke "#000000EE" -strokewidth 5 caption:"\"{q2c1}\"" -fill white -stroke none caption:"\"{q2c1}\"" -flatten -trim +repage {TMP_OUT:tb1}
+convert -size x50 -background transparent -font "{q1c3}" -pointsize 50 -depth 8 -colorspace srgb -type TrueColorAlpha -gravity center -fill black -stroke "#000000EE" -strokewidth 5 label:"- {q2c2}" -fill "#27b348" -stroke none label:"- {q2c2}" -flatten -trim +repage {TMP_OUT:tb2}
+convert -size 1065x1490 xc:transparent {TMP_OUT:tmp}
+composite -gravity southeast -geometry +110+250 {TMP_IN:tb1} {TMP_IN:tmp} {TMP_OUT:tmp}
+composite -gravity southeast -geometry +110+150 {TMP_IN:tb2} {TMP_IN:tmp} {OUT:overlay_01:PNG}

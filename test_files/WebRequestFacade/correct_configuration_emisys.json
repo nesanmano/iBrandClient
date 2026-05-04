@@ -1,0 +1,193 @@
+{
+	'executorClassName': 'NomadLogic.Common.Util.QuestionnaireWebRequest.Emisys.WebRequestEmisysPayWall',
+	'executorConfiguration': {
+		'Timeout': 2500,
+		'DoNotTestEndPointInit': true,
+		'LoginInfo': {
+			'RootApiUrl': 'https://live-test.byemisys.com/api',
+			'Apikey': 'Nu/9qmq6e38NFpB..vq6',
+			'UserEmail': 'api@nomadlogic.com',
+			'Version': 1
+		}
+	},
+	'questionnaireMapper': [
+		{
+			'TargetClass': 'MemberIndividuInfo', 
+			'PropertyName': 'email', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		},
+		{
+			'TargetClass': 'FinalizeCardInfo', 
+			'PropertyName': 'result', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		},
+		{
+			'TargetClass': 'FinalizeCardInfo', 
+			'PropertyName': 'status', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		},
+		{
+			'TargetClass': 'FinalizeCardInfo', 
+			'PropertyName': 'email', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		},
+		{
+			'TargetClass': 'FinalizeCardInfo', 
+			'PropertyName': 'language', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		},
+		{
+			'TargetClass': 'FinalizeCardInfo', 
+			'PropertyName': 'username', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		},
+		{
+			'TargetClass': 'FinalizeCardInfo', 
+			'PropertyName': 'currentBalance', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		},
+		{
+			'TargetClass': 'FinalizeCardInfo', 
+			'PropertyName': 'numBasket', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		},
+		{
+			'TargetClass': 'FinalizeCardInfo', 
+			'PropertyName': 'distinctPos', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		},
+		{
+			'TargetClass': 'FinalizeCardInfo', 
+			'PropertyName': 'orignalBalance', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		},
+		{
+			'TargetClass': 'ResponseInitCardInfo', 
+			'PropertyName': 'result', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		},
+		{
+			'TargetClass': 'ResponseInitCardInfo', 
+			'PropertyName': 'status', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		},
+		{
+			'TargetClass': 'ResponseInitCardInfo', 
+			'PropertyName': 'user.id', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		},
+		{
+			'TargetClass': 'ResponseInitCardInfo', 
+			'PropertyName': 'balance', 
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2, 
+			'ChoiceNo': 2,
+			'SubChoiceNo': 2
+		}
+	],
+	"executorAction": {
+    "ReturnTypeName": "NomadLogic.Common.Util.QuestionnaireWebRequest.Emisys.ResponseInitCardInfo",
+    "WebRequestMethodName": "InitCard",
+    "WebRequestMethodParameterDefinitions": [
+      {
+        "TokenValue": "{q12}",
+        "Name": "cardUid",
+        "NameType": "string"
+      },
+      {
+        "PropertyMap": [
+          {
+            "PropertyName": "Amount",
+            "TokenValue": "{q11}"
+          },
+          {
+            "PropertyName": "Language",
+            "TokenValue": "{RESPONDENT:Language}"
+          },
+          {
+            "PropertyName": "Email",
+            "TokenValue": "{q12}@nomadlogic.com"
+          },
+          {
+            "PropertyName": "Firstname",
+            "TokenValue": "{q2}"
+          },
+          {
+            "PropertyName": "Lastname",
+            "TokenValue": "{q3}"
+          },
+          {
+            "PropertyName": "FirstnameEmisys",
+            "TokenValue": "{q2}"
+          },
+          {
+            "PropertyName": "LastnameEmisys",
+            "TokenValue": "{q3}"
+          },
+          {
+            "PropertyName": "IsAgreeContestRules",
+            "TokenValue": "{q8:bool}"
+          },
+          {
+            "PropertyName": "IsLegalAge",
+            "TokenValue": "{q7c1s1:bool}"
+          },
+          {
+            "PropertyName": "IsTdClient",
+            "TokenValue": "{q9c1s1:bool}"
+          },
+          {
+            "PropertyName": "LifeStyleCode",
+            "TokenValue": "{q10:subchoiceno}"
+          },
+          {
+            "PropertyName": "Sms",
+            "TokenValue": "{q6}"
+          }
+        ],
+        "Name": "bodyData",
+        "NameType": "NomadLogic.Common.Util.QuestionnaireWebRequest.Emisys.PostInitCardInfo"
+      }
+    ],
+    "WebMethod": "POST"
+  }
+}

@@ -1,0 +1,8 @@
+{
+	'executorClassName': 'NomadLogic.Common.Util.QuestionnaireWebRequest.iBrand.WebExecutorIbrand',
+	'executorConfiguration': {
+		'Timeout': 4500,
+		'Url': 'localhost:8080',
+		'AppName': 'ibrand_app'
+	}
+}

@@ -1,0 +1,13 @@
+{
+	'executorClassName': 'NomadLogic.Common.Util.QuestionnaireWebRequest.Emisys.WebRequestEmisysPayWall',
+	'executorConfiguration': {
+		'Timeout': 2500,
+		'DoNotTestEndPointInit': true,
+		'LoginInfo': {
+			'RootApiUrl': 'https://live.byemisys.com/api',
+			'Apikey': 'OJ2Z0XlwRCrXwHhfgdzq',
+			'UserEmail': 'api@nomadlogic.com',
+			'Version': 1
+		}
+	}
+}

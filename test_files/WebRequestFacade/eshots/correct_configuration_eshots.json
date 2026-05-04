@@ -1,0 +1,49 @@
+{
+	'executorClassName': 'NomadLogic.Common.Util.QuestionnaireWebRequest.Eshots.WebRequestEshots',
+	'executorConfiguration': {
+		'Timeout': 2500,
+		'DoNotTestEndPointInit': false
+	},
+	'questionnaireMapper': [
+		{
+			'TargetClass': 'EshotsConsumerIdentificationResult', 
+			'PropertyName': 'ConsumerData.Email',
+			'SaveMethod': 'Text', 
+			'QuestionNo': 2
+		},
+		{
+			'TargetClass': 'EshotsConsumerIdentificationResult', 
+			'PropertyName': 'ConsumerData.FirstName',
+			'SaveMethod': 'Text', 
+			'QuestionNo': 3
+		},
+		{
+			'TargetClass': 'EshotsConsumerIdentificationResult', 
+			'PropertyName': 'ConsumerData.LastName',
+			'SaveMethod': 'Text', 
+			'QuestionNo': 4
+		},
+		{
+			'TargetClass': 'EshotsConsumerIdentificationResult', 
+			'PropertyName': 'ConsumerData.PhoneNumber',
+			'SaveMethod': 'Text', 
+			'QuestionNo': 5
+		}
+	],
+	"executorAction": {
+    "ReturnTypeName": "NomadLogic.Common.Util.QuestionnaireWebRequest.Eshots.EshotsConsumerIdentificationResult",
+    "WebRequestMethodName": "GetConsumerRequestFromFacade",
+    "WebRequestMethodParameterDefinitions": [
+      {
+        "TokenValue": "{q1}",
+        "Name": "id",
+        "NameType": "string"
+      },
+	  {
+        "TokenValue": "EventTokenId",
+        "Name": "typeStr",
+        "NameType": "string"
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questionnaire title="Mercedez-ESH-2018B" lg="en" version="1.0">
+
+		<event name="Mercedez-ESH-2018B"/>
+		<submit_action class="NomadLogic.iBrand.Util.SubmitAction.FfmpegVideoGif_Esh_2018_03"></submit_action>
+		
+		<questionnaire_file user_client="esh201803_cam_b" file_name="Mercedez-esh-2018-03b-desktop.xml"/>
+		
+		<question type="6" no="1" class="com.nomadlogic.ibrand.question.QuestionText" mandatory="false">
+			<text lg="en">Email</text>
+			<choices>
+				<choice no="1" class="com.nomadlogic.ibrand.choice.ChoiceText" />
+			</choices>
+		</question>
+		
+		<question type="1" no="2" class="com.nomadlogic.ibrand.question.QuestionCheck" mandatory="false">
+			<text lg="en">Opt-in accept</text>
+			<choices>
+				<choice no="1" class="com.nomadlogic.ibrand.choice.ChoiceCheck" ></choice>
+			</choices>
+		</question>
+		
+		<question type="4" no="3" class="com.nomadlogic.ibrand.question.QuestionText" mandatory="false">
+			<text lg="en">SMS</text>
+			<choices>
+				<choice no="1" class="com.nomadlogic.ibrand.choice.ChoiceText" />
+			</choices>
+		</question>
+		
+		
+		<question type="4" no="4" class="com.nomadlogic.ibrand.question.QuestionText">
+			<text lg="en">RespondentID</text>
+			<choices>
+				<choice no="1" class="com.nomadlogic.ibrand.choice.ChoiceText" >
+				</choice>
+			</choices>
+		</question>
+		
+		<question type="14" no="5" class="com.nomadlogic.ibrand.question.QuestionText" mandatory="false" visible="false">
+			<text lg="en">Vimeo ID</text>
+			<choices>
+				<choice no="1" class="com.nomadlogic.ibrand.choice.ChoiceText" />
+			</choices>
+		</question>
+		
+		<question type="11" no="6" class="com.nomadlogic.ibrand.question.QuestionPhotoText" mandatory="false" visible="false">
+			<text lg="en">Gif</text>
+			<choices>
+				<choice no="1" class="com.nomadlogic.ibrand.choice.ChoiceText" />
+			</choices>
+		</question>
+		
+		<question type="11" no="7" class="com.nomadlogic.ibrand.question.QuestionPhotoText">
+			<text lg="en">Photo</text>
+			<choices>
+				<choice no="1" class="com.nomadlogic.ibrand.choice.ChoiceText" />
+			</choices>
+		</question>
+
+		<question type="11" no="8" class="com.nomadlogic.ibrand.question.QuestionPhotoText" mandatory="false">
+			<text lg="en">Thumbnail</text>
+			<choices>
+				<choice no="1" class="com.nomadlogic.ibrand.choice.ChoiceText"/>
+			</choices>
+		</question>
+		
+		<question type="4" no="9" class="com.nomadlogic.ibrand.question.QuestionText" mandatory="false">
+			<text lg="en">Video file</text>
+			<choices>
+				<choice no="1" class="com.nomadlogic.ibrand.choice.ChoiceText" >
+				</choice>
+			</choices>
+		</question>
+</questionnaire>

@@ -1,0 +1,9 @@
+# Transformation
+convert "{q1}" -resize "1065x" {TMP_OUT:r1}
+convert {TMP_IN:r1} -gravity center -crop "1065x1490+0+0" {TMP_OUT:c1}
+
+# Desaturate
+convert {TMP_IN:c1} -colorspace gray {TMP_OUT:1}
+
+# overlays
+convert {TMP_IN:1} "{q2}" -composite {OUT:1:JPG:90}

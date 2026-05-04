@@ -1,0 +1,803 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{441AF8B0-406F-43A4-997F-091AFB41BE6B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NomadLogic.Common</RootNamespace>
+    <AssemblyName>NomadLogic.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\ibrand_client\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Awesomium.Core">
+      <HintPath>..\lib\Awesomium\Awesomium.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Awesomium.Windows.Forms">
+      <HintPath>..\lib\Awesomium\Awesomium.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\lib\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="SlimDX">
+      <HintPath>..\lib\SlimDX.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Condition\ConditionJsonConverter.cs" />
+    <Compile Include="Condition\MultipleCondition.cs" />
+    <Compile Include="Condition\BooleanOperatorEnum.cs" />
+    <Compile Include="Extentions\BitmapExtentions.cs" />
+    <Compile Include="Extentions\CollectionsExtentions.cs" />
+    <Compile Include="Phidgets\ILightsManager.cs" />
+    <Compile Include="Phidgets\PhidgetTriggerManager.cs" />
+    <Compile Include="PresentationScreens\Elements\PresentationElement.cs" />
+    <Compile Include="PresentationScreens\Elements\PresentationBackground.cs" />
+    <Compile Include="PresentationScreens\Elements\IPresentationLanguageDependent.cs" />
+    <Compile Include="PresentationScreens\IPresentationElement.cs" />
+    <Compile Include="PresentationScreens\IPresentationScreen.cs" />
+    <Compile Include="PresentationScreens\PresentationData.cs" />
+    <Compile Include="PresentationScreens\PresentationProjectData.cs" />
+    <Compile Include="PresentationScreens\PresentationScreenData.cs" />
+    <Compile Include="Questionnaire\DataModelBase.cs" />
+    <Compile Include="Questionnaire\ISaveToQuestionnaireFormatter.cs" />
+    <Compile Include="QuestionTypeEnum.cs" />
+    <Compile Include="Resources\common .fr-CA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>common .fr-CA.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\common.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>common.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Respondent\Answer.cs" />
+    <Compile Include="Respondent\DynamicHeader.cs" />
+    <Compile Include="Respondent\ICurrentRespondentSource.cs" />
+    <Compile Include="Respondent\ISaveLocalRespondentData.cs" />
+    <Compile Include="Respondent\QuestionIdentifier.cs" />
+    <Compile Include="Serveur\Structures\RequestDownloadZipFilePayload.cs" />
+    <Compile Include="Serveur\ServerConfiguration.cs" />
+    <Compile Include="Serveur\ServerTerminalDownloadRequest.cs" />
+    <Compile Include="Serveur\Structures\RequestQuestionnaireDataPayload.cs" />
+    <Compile Include="Serveur\Structures\RequestQuestionnaireDataResponse.cs" />
+    <Compile Include="Serveur\Structures\RequestGetRespondentDataPayload.cs" />
+    <Compile Include="Serveur\Structures\RequestGetRespondentDataResult.cs" />
+    <Compile Include="Serveur\Structures\RequestRespondentDataIdentificationStrategyEnum.cs" />
+    <Compile Include="Serveur\Structures\RequestRespondentDataTarget.cs" />
+    <Compile Include="Serveur\Structures\RequestSendRespondentDataPayload.cs" />
+    <Compile Include="Serveur\Structures\RequestSendRespondentDataResult.cs" />
+    <Compile Include="Serveur\Structures\RequestSyncPayload.cs" />
+    <Compile Include="Serveur\Structures\RequestSyncRespondent.cs" />
+    <Compile Include="Serveur\Structures\RequestSyncResponse.cs" />
+    <Compile Include="Serveur\TerminalControlInfo.cs" />
+    <Compile Include="Serveur\TerminalInfo.cs" />
+    <Compile Include="Serveur\TerminalServerSyncMode.cs" />
+    <Compile Include="Serveur\TerminalStructure\TerminalChoice.cs" />
+    <Compile Include="Serveur\TerminalStructure\TerminalClient.cs" />
+    <Compile Include="Serveur\TerminalStructure\TerminalQuestion.cs" />
+    <Compile Include="Serveur\TerminalStructure\TerminalQuestionnaire.cs" />
+    <Compile Include="Serveur\TerminalProjectInfo.cs" />
+    <Compile Include="Serveur\TerminalIbrandDefinition.cs" />
+    <Compile Include="Serveur\Requests\ServerRestRequestResult.cs" />
+    <Compile Include="Serveur\Requests\ServerRestRequestsUtil.cs" />
+    <Compile Include="Serveur\TerminalDownloadInfo.cs" />
+    <Compile Include="Serveur\ResourceFileToDownload.cs" />
+    <Compile Include="Serveur\TerminalStructure\TerminalStructureData.cs" />
+    <Compile Include="Serveur\UserAuthTokenManager.cs" />
+    <Compile Include="Services\ActivityLogger\Activity.cs" />
+    <Compile Include="Services\ActivityLogger\ActivityLoggerDatabase.cs" />
+    <Compile Include="Services\ActivityLogger\ActivityLoggerReport.cs" />
+    <Compile Include="Services\ActivityLogger\ActivityLoggerService.cs" />
+    <Compile Include="Services\ActivityLogger\ActivityReportItem.cs" />
+    <Compile Include="Services\Configuration\IbrandConfiguration.cs" />
+    <Compile Include="Services\Configuration\NomadConfiguration.cs" />
+    <Compile Include="Services\Configuration\PrintstationConfiguration.cs" />
+    <Compile Include="Services\Database\CondensedAnswer.cs" />
+    <Compile Include="Services\Database\Database.cs" />
+    <Compile Include="Services\Database\ICondensedAnswerDatabase.cs" />
+    <Compile Include="Services\Database\SqliteDatabase.cs" />
+    <Compile Include="Services\IAsyncLongRunning.cs" />
+    <Compile Include="Services\IProgressDeepCopy.cs" />
+    <Compile Include="Services\IReportObserver.cs" />
+    <Compile Include="Services\LocalCapabilities\CapabilitiesReport.cs" />
+    <Compile Include="Services\LocalCapabilities\CapabilityStatus.cs" />
+    <Compile Include="Services\LocalCapabilities\CapabilityStatusGroupEnum.cs" />
+    <Compile Include="Services\LocalCapabilities\ILocalCapabilityTester.cs" />
+    <Compile Include="Services\LocalCapabilities\ILocalCapabilityVerifier.cs" />
+    <Compile Include="Services\LocalCapabilities\ILocalCapabilityVerifierForm.cs" />
+    <Compile Include="Services\LocalCapabilities\LocalCapabilitiesManager.cs" />
+    <Compile Include="Services\LocalCapabilities\LocalCapabilityVerifierAssets.cs" />
+    <Compile Include="Services\LocalCapabilities\LocalCapabilityVerifierAbstract.cs" />
+    <Compile Include="Services\LocalCapabilities\LocalCapabilityVerifierVlc.cs" />
+    <Compile Include="Services\LocalCapabilities\StatusEnum.cs" />
+    <Compile Include="Services\LocalCapabilities\SubCapabilityStatus.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\ServiceLongRunningAbstract.cs" />
+    <Compile Include="Services\StateWatcher\IWatcherListUpdate.cs" />
+    <Compile Include="Services\StateWatcher\ServiceStateWatcher.cs" />
+    <Compile Include="Ui\Configuration\Eshots\EshotApiSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Configuration\Eshots\EshotApiSetup.Designer.cs">
+      <DependentUpon>EshotApiSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Forms\Extensions\FormExtensions.cs" />
+    <Compile Include="Ui\INeedWinformParentControl.cs" />
+    <Compile Include="Ui\IThumbnailOverlaySelector.cs" />
+    <Compile Include="Ui\NomadScreen\EvaluationResult.cs" />
+    <Compile Include="Ui\NomadScreen\IEvaluateDefinitionsState.cs" />
+    <Compile Include="Ui\NomadScreen\IHasDefaultPropertyValue.cs" />
+    <Compile Include="Ui\NomadScreen\IHasI18nText.cs" />
+    <Compile Include="Ui\NomadScreen\IHasI18nTextDictionary.cs" />
+    <Compile Include="Ui\NomadScreen\IInactiveTimer.cs" />
+    <Compile Include="Ui\NomadScreen\ILanguageScreenInterface.cs" />
+    <Compile Include="Respondent\IObtainCurrentFullRespondent.cs" />
+    <Compile Include="Ui\IPreviewDialogTransformationReceiver.cs" />
+    <Compile Include="Ui\CameraRing\CameraRingConfigurationDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\CameraRing\CameraRingConfigurationDlg.Designer.cs">
+      <DependentUpon>CameraRingConfigurationDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\CameraRing\CameraSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\CameraRing\CameraSettingsDialog.Designer.cs">
+      <DependentUpon>CameraSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\CameraRing\CameraView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\CameraRing\CameraView.Designer.cs">
+      <DependentUpon>CameraView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\CameraRing\MultipleCameraSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\CameraRing\MultipleCameraSettingsDialog.designer.cs">
+      <DependentUpon>MultipleCameraSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Choice\PreviewOnTV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Choice\PreviewOnTV.Designer.cs">
+      <DependentUpon>PreviewOnTV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Dialog\CbtHook.cs" />
+    <Compile Include="Ui\Dialog\DialogBox.cs" />
+    <Compile Include="Ui\Dialog\Win32API.cs" />
+    <Compile Include="Ui\Dialog\WindowsHook.cs" />
+    <Compile Include="Ui\Dialog\WndProcRetHook.cs" />
+    <Compile Include="Ui\Forms\WaiverDialogClickZone.cs" />
+    <Compile Include="Ui\Keyboard\CustomPaintLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ui\Keyboard\GradientTextLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ui\Keyboard\KeyboardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Keyboard\KeyboardControl.Designer.cs">
+      <DependentUpon>KeyboardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Keyboard\KeyboardEmail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\Keyboard\KeyboardKeyNone.cs" />
+    <Compile Include="Ui\Keyboard\UsaKeyboardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Ui\NomadScreen\ISaveToQuestionnaire.cs" />
+    <Compile Include="Ui\NomadScreen\ISyncActionRequired.cs" />
+    <Compile Include="Ui\NomadScreen\LanguageSelectionEventHandler.cs" />
+    <Compile Include="Ui\Localization\LocalizedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Localization\LocalizedForm.designer.cs">
+      <DependentUpon>LocalizedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\MessageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\MessageDialog.Designer.cs">
+      <DependentUpon>MessageDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\MultiplePicturesPreviewDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\MultiplePicturesPreviewDlg.Designer.cs">
+      <DependentUpon>MultiplePicturesPreviewDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\NomadScreen\ScreenAction\AbstractScreenAction.cs" />
+    <Compile Include="Ui\NomadScreen\ScreenAction\IScreenAction.cs" />
+    <Compile Include="Ui\NomadScreen\ScreenAction\PrintScreenAction.cs" />
+    <Compile Include="Ui\NomadScreen\ScreenAction\ScreenActionConverter.cs" />
+    <Compile Include="Ui\NomadScreen\ScreenEvaluationResult.cs" />
+    <Compile Include="Ui\OnScreenKeyboardUtil.cs" />
+    <Compile Include="Ui\PopupDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\PopupDlg.Designer.cs">
+      <DependentUpon>PopupDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\PreviewDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\PreviewDialog.Designer.cs">
+      <DependentUpon>PreviewDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\PrinterSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\PrinterSettingsDialog.Designer.cs">
+      <DependentUpon>PrinterSettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\PrintTestDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\PrintTestDialog.Designer.cs">
+      <DependentUpon>PrintTestDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Condition\ICondition.cs" />
+    <Compile Include="Condition\EventCondition.cs" />
+    <Compile Include="Condition\QuestionCondition.cs" />
+    <Compile Include="Respondent\IRespondent.cs" />
+    <Compile Include="Respondent\RespondentImpl.cs" />
+    <Compile Include="Ui\Forms\WaiverHtmlDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Forms\WaiverHtmlDialog.Designer.cs">
+      <DependentUpon>WaiverHtmlDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\Forms\WaiverImageDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Forms\WaiverImageDialog.Designer.cs">
+      <DependentUpon>WaiverImageDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ThumbnailOverlaySelectorImageInfo.cs" />
+    <Compile Include="Ui\ThumbnailOverlaySelectorState.cs" />
+    <Compile Include="Util\ComparableFileInfoFilterBase.cs" />
+    <Compile Include="Util\ComparableFileInfoFilterServerDate.cs" />
+    <Compile Include="Util\DateAndTime\DatetimeCalculator.cs" />
+    <Compile Include="Util\DateAndTime\DateTimeCalculatorFromNow.cs" />
+    <Compile Include="Util\EventsUtil.cs" />
+    <Compile Include="Util\Excel\ExcelUtil.cs" />
+    <Compile Include="Util\FileFuture.cs" />
+    <Compile Include="Util\FileTokenInfo.cs" />
+    <Compile Include="Util\IFileSelector.cs" />
+    <Compile Include="Util\Keyboard\GlobalKeyboardHook.cs" />
+    <Compile Include="Util\Keyboard\KeyboardHook.cs" />
+    <Compile Include="Util\Keyboard\VirtualKeys.cs" />
+    <Compile Include="Util\Networking\DownloadProgress\DownloadReportInfo.cs" />
+    <Compile Include="Ui\UserPasswordModalDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\UserPasswordModalDialog.Designer.cs">
+      <DependentUpon>UserPasswordModalDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\ComparableFileInfo.cs" />
+    <Compile Include="Util\DictionaryUtil.cs" />
+    <Compile Include="Ui\NomadScreen\IActivateScreen.cs" />
+    <Compile Include="Util\Networking\Ftp\FtpBatchProgress.cs" />
+    <Compile Include="Util\Networking\Ftp\FtpConfigInfo.cs" />
+    <Compile Include="Util\Networking\Ftp\FtpSynchroUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Util\Networking\Ftp\FtpSynchroUi.Designer.cs">
+      <DependentUpon>FtpSynchroUi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\Networking\Ftp\FtpUploadParameter.cs" />
+    <Compile Include="Util\Networking\Ftp\FtpWebUtil.cs" />
+    <Compile Include="Util\Networking\Ftp\FtpWorker.cs" />
+    <Compile Include="Util\Networking\Ftp\WebRequestSetup.cs" />
+    <Compile Include="Util\IElementMonitor.cs" />
+    <Compile Include="Util\IExternalFileConfig.cs" />
+    <Compile Include="Ui\NomadScreen\IPaint.cs" />
+    <Compile Include="Util\ListUtils.cs" />
+    <Compile Include="Util\IPaginationMonitor.cs" />
+    <Compile Include="Util\Json\JsonUtil.cs" />
+    <Compile Include="Util\Json\FTPConfigurationInfo.cs" />
+    <Compile Include="UploadHelper\FtpFileUpload.cs" />
+    <Compile Include="Util\BlockingQueue.cs" />
+    <Compile Include="Util\Camera\CameraControllerStateEnum.cs" />
+    <Compile Include="Util\Camera\CameraPictureRequestResult.cs" />
+    <Compile Include="Util\Camera\Canon\CameraConfigCanon.cs" />
+    <Compile Include="Util\Camera\Canon\CameraControllerCanon.cs" />
+    <Compile Include="Util\Camera\Canon\CameraProperty\AbstractCameraProperty.cs" />
+    <Compile Include="Util\Camera\Canon\CameraProperty\AEMode.cs" />
+    <Compile Include="Util\Camera\Canon\CameraProperty\Av.cs" />
+    <Compile Include="Util\Camera\Canon\CameraProperty\CameraPropertiesGroup.cs" />
+    <Compile Include="Util\Camera\Canon\CameraProperty\ExposureComp.cs" />
+    <Compile Include="Util\Camera\Canon\CameraProperty\ImageQuality.cs" />
+    <Compile Include="Util\Camera\Canon\CameraProperty\Iso.cs" />
+    <Compile Include="Util\Camera\Canon\CameraProperty\MeteringMode.cs" />
+    <Compile Include="Util\Camera\Canon\CameraProperty\Tv.cs" />
+    <Compile Include="Util\Camera\Canon\CameraProperty\WhiteBalance.cs" />
+    <Compile Include="Util\Camera\Canon\CameraSettingsManagerCanon.cs" />
+    <Compile Include="Util\Camera\Canon\RequestExecutorCanon.cs" />
+    <Compile Include="Util\Camera\Canon\RequestExecutorPicturesCanon.cs" />
+    <Compile Include="Util\Camera\Canon\RequestExecutorVideoCanon.cs" />
+    <Compile Include="Util\Camera\Canon\SinglePictureTakeCanon.cs" />
+    <Compile Include="Util\Camera\Canon\SingleVideoTakeCanon.cs" />
+    <Compile Include="Util\Camera\GoProCam\CameraConfigGoPro.cs" />
+    <Compile Include="Util\Camera\GoProCam\CameraControllerGoProSingle.cs" />
+    <Compile Include="Util\Camera\GoProCam\RequestExecutorGoPro.cs" />
+    <Compile Include="Util\Camera\GoProCam\SingleCameraTakeGoPro.cs" />
+    <Compile Include="Util\Camera\GoProCam\VideoTakeGoPro.cs" />
+    <Compile Include="Util\Camera\ICameraConfig.cs" />
+    <Compile Include="Util\Camera\ICameraController.cs" />
+    <Compile Include="Util\Camera\ICameraRequest.cs" />
+    <Compile Include="Util\Camera\ICountDownEventListener.cs" />
+    <Compile Include="Util\Camera\IForcedUnregister.cs" />
+    <Compile Include="Util\Camera\ILiveViewListener.cs" />
+    <Compile Include="Util\Camera\IPictureListener.cs" />
+    <Compile Include="Util\Camera\IPictureRequest.cs" />
+    <Compile Include="Util\Camera\IVideoListener.cs" />
+    <Compile Include="Util\Camera\IVideoRequest.cs" />
+    <Compile Include="Util\Camera\PictureRequestSingle.cs" />
+    <Compile Include="Util\Camera\VideoRequestSingle.cs" />
+    <Compile Include="Util\CanonCameraManager.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="UploadHelper\HttpUploadHelper.cs" />
+    <Compile Include="UploadHelper\MimePart.cs" />
+    <Compile Include="UploadHelper\StreamMimePart.cs" />
+    <Compile Include="UploadHelper\StringMimePart.cs" />
+    <Compile Include="UploadHelper\UploadFile.cs" />
+    <Compile Include="Util\ClassUtil.cs" />
+    <Compile Include="Util\LimitedConcurrencyLevelTaskScheduler.cs" />
+    <Compile Include="Util\Math\RectangleComparer.cs" />
+    <Compile Include="Util\Networking\InternetConnectionWatcher.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\BaseCreationDate.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\BaseDateAndI18N.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\BaseNameI18N.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\ICreationDate.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\INameI18N.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\AccessControlLog.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\AccessToken.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\AccessTokenRequest.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\Account.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\Event.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\EventTemplate.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\EventType.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\GrantTypeEnum.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\LoginResponse.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\MediaResult.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\payloads\LoginPayload.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\Media.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\payloads\MediaPayload.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\payloads\ProcessAccessScanPayload.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\Product.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\Tenant.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\Ticket.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\TicketStatusEnum.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\TicketType.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\TicketValidity.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\Transaction.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\User.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\ValidationResult.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\WalletType.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\ValidationTypeEnum.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\Zone.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\WebRequestConnectAndGo.cs" />
+    <Compile Include="Util\Networking\RestRequestBasicResponse.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoStaticUtil.cs" />
+    <Compile Include="Util\PropertyHolder.cs" />
+    <Compile Include="Util\RegexWrapper.cs" />
+    <Compile Include="Util\RfidReader\RfidReaderBase.cs" />
+    <Compile Include="Util\String\DatePrefixGenerator.cs" />
+    <Compile Include="Util\ThreadPool\CustomWorker.cs" />
+    <Compile Include="Util\ThreadPool\CustomWorkerTask.cs" />
+    <Compile Include="Util\ThreadPool\CustomWorkerPool.cs" />
+    <Compile Include="Util\Networking\HttpRestUtil.cs" />
+    <Compile Include="Ui\NomadScreen\IImageInitialisable.cs" />
+    <Compile Include="Ui\NomadScreen\IInitialisable.cs" />
+    <Compile Include="Ui\NomadScreen\IRecyclable.cs" />
+    <Compile Include="Util\Json\TimespanConverter.cs" />
+    <Compile Include="Util\LaunchProcessUtil.cs" />
+    <Compile Include="Util\Math\Fraction.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\CardPaymentInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\CardValueInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\BasketCreationInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\BasketTransactionInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\BasketCommandStatusInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\EmisysApiLoginInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\EmisysStatusEnum.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\FinalizeCardInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\BasketInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\BasketStatusEnum.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\PayloadBodyinfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\PostInitCardInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\ProductInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\ResponseInitCardInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\MockUidResultTestObject.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\MemberIndividuInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\MemberInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\MemberCardInfo.cs" />
+    <Compile Include="Util\FontDefinitionInfo.cs" />
+    <Compile Include="Util\Json\IJsonConfig.cs" />
+    <Compile Include="Util\Math\Line2D.cs" />
+    <Compile Include="Util\Math\Point2D.cs" />
+    <Compile Include="Util\Networking\Server.cs" />
+    <Compile Include="Ui\Keyboard\KeyboardKey.cs" />
+    <Compile Include="Ui\Keyboard\KeyboardKeysFactory.cs" />
+    <Compile Include="Ui\Keyboard\NumbersKeyboardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Util\DateAndTime\DateUtil.cs" />
+    <Compile Include="Util\DirectoryUtil.cs" />
+    <Compile Include="Util\Trigger\TriggerManagerBase.cs" />
+    <Compile Include="Util\Trigger\TriggerManagerConverter.cs" />
+    <Compile Include="Util\Trigger\TriggerManagerFormKeyboard.cs" />
+    <Compile Include="Util\Win32\FormUtil.cs" />
+    <Compile Include="Util\GenerateUniqueID.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ServicesContainer.cs" />
+    <Compile Include="Ui\ClsColor.cs" />
+    <Compile Include="Ui\ColorButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ui\ColorButtonDesigner.cs" />
+    <Compile Include="Ui\VS2008MenuRenderer.cs" />
+    <Compile Include="Ui\VS2008MenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ui\VS2008StatusStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ui\VS2008ToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ui\VS2008ToolStripContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ui\VS2008ToolStripRenderer.cs" />
+    <Compile Include="Util\Networking\Ftp\FtpPool.cs" />
+    <Compile Include="Util\FileUtil.cs" />
+    <Compile Include="Util\Networking\HttpUtil.cs" />
+    <Compile Include="Util\HumanEquation\Json\EventData.cs" />
+    <Compile Include="Util\HumanEquation\Json\EventScanResponse.cs" />
+    <Compile Include="Util\HumanEquation\Json\RequestTokenResponse.cs" />
+    <Compile Include="Util\HumanEquation\Json\Response.cs" />
+    <Compile Include="Util\HumanEquation\Json\ResponseData.cs" />
+    <Compile Include="Util\HumanEquation\Json\User.cs" />
+    <Compile Include="Util\IEventLogger.cs" />
+    <Compile Include="Util\Json\Answers.cs" />
+    <Compile Include="Util\Trigger\LaserBeam\DetectorGamePad.cs" />
+    <Compile Include="Util\Trigger\LaserBeam\LaserBeamManager.cs" />
+    <Compile Include="Util\Trigger\LaserBeam\TestLaserBeam.cs" />
+    <Compile Include="Util\LogUtil.cs" />
+    <Compile Include="Util\MainFormUtil.cs" />
+    <Compile Include="Util\Math\MathUtil.cs" />
+    <Compile Include="Util\Networking\NetworkMonitor.cs" />
+    <Compile Include="Util\Networking\ListenForFilesTask.cs" />
+    <Compile Include="Util\Networking\NetUtil.cs" />
+    <Compile Include="Util\Networking\ScanForFileServer.cs" />
+    <Compile Include="Util\Networking\SsdpServiceLocator.cs" />
+    <Compile Include="Util\Networking\SsdpServiceProvider.cs" />
+    <Compile Include="Util\Networking\SsdpUtil.cs" />
+    <Compile Include="Util\Networking\UploadFileToTcpListener.cs" />
+    <Compile Include="Util\Print\PrintJob.cs" />
+    <Compile Include="Util\Print\PrintJobImageDrawOptions.cs" />
+    <Compile Include="Util\Print\PrintCountInfo.cs" />
+    <Compile Include="Util\Print\PrintJobInfo.cs" />
+    <Compile Include="Util\Print\PrintUtil.cs" />
+    <Compile Include="Util\PropertyFile.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\WebRequestEmisysBasketTransaction.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\WebRequestEmisysPayWall.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\WebRequestEmisysStandard.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Emisys\WebRequestEmisysAbstract.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsApiService.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsAuthentificationResultInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsComplexRequestResultEnum.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsConsumerDataInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsConsumerIdentificationResult.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsConsumerResultInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsConsumerUploadData.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsDataConfiguration.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsEventDayFileUploads.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsEventDaysResultInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsEventsResultInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsAuthentificationRequestInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsCampaign.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsConsumerRequestIdType.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsEvent.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsEventDay.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsFileUpload.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsFileUploadDetail.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsFileUploadsRequest.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsFileUploadsResult.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsMediaUploadRequest.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsResult.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsServerInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\EshotsFileUploadsResultInfo.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\IDatabaseEshots.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\Eshots\WebRequestEshots.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\iBrand\IBrandCondensedQuestionnaireAnswer.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\iBrand\WebExecutorIbrand.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\IWebRequestExecutor.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ParameterDefinitionConverter.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ParameterDefinitionObject.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ParameterDefinitionValue.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\ParameterDefinition.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\PropertyQuestionnaireMapping.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\WebExecutorMapper.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\WebRequestFacade.cs" />
+    <Compile Include="Util\Networking\QuestionnaireWebRequest\WebRequestFacadeAction.cs" />
+    <Compile Include="Util\Networking\RestRequestJsonResponse.cs" />
+    <Compile Include="Util\RfidReader\IRfidEvents.cs" />
+    <Compile Include="Util\RfidReader\IRfidReader.cs" />
+    <Compile Include="Util\RfidReader\RfidReaderConverter.cs" />
+    <Compile Include="Util\RfidReader\Simple_RfidReader.cs" />
+    <Compile Include="Util\SingleApplication.cs" />
+    <Compile Include="Util\RfidReader\MR800_RfidReader.cs" />
+    <Compile Include="Util\RfidReader\RfidReadEventArgs.cs" />
+    <Compile Include="Util\StringUtil.cs" />
+    <Compile Include="Util\VersionInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoAccountInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoAlbumInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoAppInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoPicturesInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoPictureSizeInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoPrivacyInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoRequestResultInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoSpaceInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoUploadTicketInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoApi.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoVideoDownloadInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoVideoFileInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoVideoInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoVideoPrivacyInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoVideoStatsInfo.cs" />
+    <Compile Include="Util\Networking\VimeoApi\VimeoWebsiteInfo.cs" />
+    <Compile Include="Util\Win32\WinUserConstants.cs" />
+    <Compile Include="Xangle\XangleDetectionManager.cs" />
+    <Compile Include="Xangle\XangleIbrandMapping.cs" />
+    <Compile Include="Xangle\XangleItem.cs" />
+    <Compile Include="Xangle\XangleItemDetected.cs" />
+    <Compile Include="Xangle\XangleItemType.cs" />
+    <Compile Include="Xangle\XangleReportEvent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\common .fr-CA.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>common .fr-CA.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\common.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>common.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\CameraRing\CameraRingConfigurationDlg.resx">
+      <DependentUpon>CameraRingConfigurationDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\CameraRing\CameraSettingsDialog.resx">
+      <DependentUpon>CameraSettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\CameraRing\CameraView.resx">
+      <DependentUpon>CameraView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\CameraRing\MultipleCameraSettingsDialog.resx">
+      <DependentUpon>MultipleCameraSettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Configuration\Eshots\EshotApiSetup.resx">
+      <DependentUpon>EshotApiSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Forms\WaiverHtmlDialog.resx">
+      <DependentUpon>WaiverHtmlDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Forms\WaiverImageDialog.resx">
+      <DependentUpon>WaiverImageDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Keyboard\KeyboardControl.resx">
+      <DependentUpon>KeyboardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Localization\LocalizedForm.resx">
+      <DependentUpon>LocalizedForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\MessageDialog.resx">
+      <DependentUpon>MessageDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\MultiplePicturesPreviewDlg.resx">
+      <DependentUpon>MultiplePicturesPreviewDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\PopupDlg.resx">
+      <DependentUpon>PopupDlg.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\PreviewDialog.resx">
+      <DependentUpon>PreviewDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\PrinterSettingsDialog.resx">
+      <DependentUpon>PrinterSettingsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\PrintTestDialog.resx">
+      <DependentUpon>PrintTestDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\UserPasswordModalDialog.resx">
+      <DependentUpon>UserPasswordModalDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Util\Networking\Ftp\FtpSynchroUi.resx">
+      <DependentUpon>FtpSynchroUi.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\canon_eos_framework\canon_eos_framework.csproj">
+      <Project>{f809dbb6-e0e8-47a8-92ed-c24575576a5d}</Project>
+      <Name>canon_eos_framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmisysCardScannerLib\EmisysCardScannerLib.vbproj">
+      <Project>{033286e4-a924-405c-89b6-c0e532c47019}</Project>
+      <Name>EmisysCardScannerLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GoPro.Hero\GoPro.Hero.csproj">
+      <Project>{E3C01AD3-78C3-41D5-BB0B-CE54CCFEE038}</Project>
+      <Name>GoPro.Hero</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VimeoDotNet3\VimeoAPI.csproj">
+      <Project>{9560c1d6-0076-4c76-9a6c-f0b1097a08c2}</Project>
+      <Name>VimeoAPI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Aspose.Cells">
+      <Version>22.6.1</Version>
+    </PackageReference>
+    <PackageReference Include="AWSSDK.Core">
+      <Version>3.7.12.4</Version>
+    </PackageReference>
+    <PackageReference Include="AWSSDK.S3">
+      <Version>3.7.9.19</Version>
+    </PackageReference>
+    <PackageReference Include="ColorMine">
+      <Version>1.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="EntityFramework">
+      <Version>6.4.4</Version>
+    </PackageReference>
+    <PackageReference Include="JetBrains.Annotations">
+      <Version>2023.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="MCollections">
+      <Version>1.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Bcl.Async">
+      <Version>1.0.168</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Net.Http">
+      <Version>2.2.29</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="NLog">
+      <Version>4.7.15</Version>
+    </PackageReference>
+    <PackageReference Include="Phidget22.NET">
+      <Version>1.10.20220622</Version>
+    </PackageReference>
+    <PackageReference Include="RestSharp">
+      <Version>108.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Rssdp">
+      <Version>4.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite">
+      <Version>1.0.112</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite.Core">
+      <Version>1.0.112.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite.EF6">
+      <Version>1.0.112.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite.Linq">
+      <Version>1.0.112.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Net.Http.WinHttpHandler">
+      <Version>6.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
+      <Version>6.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="WinSCP">
+      <Version>5.21.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

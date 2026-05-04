@@ -1,0 +1,37 @@
+{
+    'executorClassName': 'NomadLogic.Common.Util.QuestionnaireWebRequest.Emisys.WebRequestEmisysBasketTransaction',
+    'executorConfiguration': {
+        'Timeout': 2500,
+        'DoNotTestEndPointInit': true,
+        'LoginInfo': {
+            'RootApiUrl': 'https://live.byemisys.com/api',
+            'Apikey': 'YhN.R310jD2Sc8kLsPR2',
+            'UserEmail': 'api@nomadlogic.com',
+            'Version': 1
+        }
+    },
+    "executorAction": {
+        "ReturnTypeName": "NomadLogic.Common.Util.QuestionnaireWebRequest.Emisys.BasketCommandStatusInfo",
+        "WebRequestMethodName": "CreateBasketTransaction",
+        "WebRequestMethodParameterDefinitions": [{
+				"Name": "creationPanier",
+				"NameType": "NomadLogic.Common.Util.QuestionnaireWebRequest.Emisys.BasketCreationInfo",
+                "PropertyMap": [
+					{
+                        "PropertyName": "PointOfServiceId",
+                        "TokenValue": "2586"
+                    }, 
+					{
+                        "PropertyName": "TerminalId",
+                        "TokenValue": "NABOOTH001"
+                    },
+					{
+                        "PropertyName": "Products",
+                        "JsonValue": "{'quantity': 2.00, 'product_id': 5797}"
+                    }
+                ]
+            }
+        ],
+        "WebMethod": "GET"
+    }
+}
