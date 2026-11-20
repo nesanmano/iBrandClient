@@ -90,6 +90,10 @@ namespace NomadLogic.Common.Serveur.Structures
         [JsonRequired] [JsonProperty("respondent_identification")]
         public RequestSendRespondentDataIdentification SendRespondentIdentification { get; set; }
 
+        [JsonRequired]
+        [JsonProperty("unique_external_identifier")]
+        public string TextValue { get; set; }
+
         [JsonProperty("answers")]
         public List<RequestSendRespondentDataAnswer> AnswersToSend { get; set; }
 
@@ -209,6 +213,7 @@ namespace NomadLogic.Common.Serveur.Structures
 
         #endregion
     }
+    
 
     public class RequestSendRespondentDataIdentification
     {

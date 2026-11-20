@@ -87,6 +87,7 @@ namespace NomadLogic.iBrandDesktop.Ui.ApplicationScreen.Generic
                 }
             };
 
+
             _takePictureTimer = new Timer
             {
                 AutoReset = false
@@ -138,6 +139,7 @@ namespace NomadLogic.iBrandDesktop.Ui.ApplicationScreen.Generic
         {
             base.InitBitmap();
             CountImageSequence?.CreateImages(_activeLg);
+         
         }
                 
         /// <inheritdoc />
@@ -162,10 +164,12 @@ namespace NomadLogic.iBrandDesktop.Ui.ApplicationScreen.Generic
         
         /// <inheritdoc/>
         protected override void SetActivatedCustom() {
-            if (ManualStartZone == null)
-            {
-                StartCountdown();
-            }
+
+            if (!_activated)
+                return; // prevents activation during preload or timer callbacks
+
+            StartCountdown();
+            
 
             if (_panelPreview != null)
             {
@@ -174,7 +178,15 @@ namespace NomadLogic.iBrandDesktop.Ui.ApplicationScreen.Generic
         }
 
         /// Lance l'équivalent du premier countdown.
-        protected void StartCountdown() {
+        private bool _countdownStarted = false;
+
+        protected void StartCountdown()
+        {
+            if (!_activated)
+                return;
+
+            if (_countdownStarted)
+                return;
 
             if (_takePictureTimer == null) return;
             // Ceci est l'équivalent de la durée du premier CountDown, avec les informations de base.

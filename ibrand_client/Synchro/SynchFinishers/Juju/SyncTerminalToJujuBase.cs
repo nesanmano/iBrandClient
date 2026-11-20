@@ -1,8 +1,3 @@
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using JetBrains.Annotations;
 using NLog;
 using NomadLogic.Common;
@@ -13,6 +8,12 @@ using NomadLogic.Common.Services;
 using NomadLogic.Common.Services.ActivityLogger;
 using NomadLogic.Common.Util;
 using NomadLogic.iBrandDesktop.Exception;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using static NomadLogic.Common.QuestionTypeEnum;
 
 namespace NomadLogic.iBrandDesktop.Synchro.SynchFinishers.Juju
@@ -55,7 +56,7 @@ namespace NomadLogic.iBrandDesktop.Synchro.SynchFinishers.Juju
             log.Trace($"Requesting Juju authentification to '{_servConfig.Address}'");
             
             // WARN: J'utilise ici un appel synchrone à cause d'un "hang-up" extrêmement difficile à identifier avec un call ASYNC.
-            var login = ServerRestRequestsUtil.LoginSync(_servConfig);
+            var login = await ServerRestRequestsUtil.LoginSync(_servConfig).ConfigureAwait(false);
             if (login.Result != ServerRestRequestResultType.Success)
             {
                 log.Warn("Could not authenticate to main server: " + _servConfig.Address);
@@ -106,6 +107,29 @@ namespace NomadLogic.iBrandDesktop.Synchro.SynchFinishers.Juju
                 var answerFromDb = db.GetAnswers(repId);
 
                 var finalAnswerList = new List<Answer>();
+
+                int EUIQuestionNumber = CurrentQuestionnaire.GetEUIQuestionNo();
+
+                var euiAnswer = answerFromDb.FirstOrDefault(a => a.QuestionNo == EUIQuestionNumber);
+
+                if (euiAnswer == null)
+                {
+                    var generatedEui = Guid.NewGuid().ToString();
+
+                    euiAnswer = new Answer
+                    {
+                        QuestionNo = EUIQuestionNumber,
+                        QuestionType = ExternalUniqueIdentifier,
+                        Response = generatedEui
+                    };
+
+                    log.Warn($"Generated missing EUI for respondent {respondent.Id}: {generatedEui}");
+
+                    answerFromDb.Add(euiAnswer);
+                }
+
+
+
                 foreach (var ans in answerFromDb)
                 {
                     // On enlève les questions qui ne doivent pas être sauvegardées.
@@ -125,7 +149,10 @@ namespace NomadLogic.iBrandDesktop.Synchro.SynchFinishers.Juju
                     // Si la réponse est de type EUI, on assigne sa valeur au répondant.
                     if (ans.QuestionType == ExternalUniqueIdentifier)
                     {
+                        // Assign the provided EUI if present
                         respondent.ExternalUniqueIdentifier = ans.Response;
+
+                      
                     }
                 }
 

@@ -351,7 +351,7 @@ namespace NomadLogic.Common.Serveur.Requests
         /// </summary>
         /// <param name="serConf">La configuration server.</param>
         /// <returns>Le résultat de la requête.</returns>
-        public static ServerRestRequestResult<string> LoginSync(ServerConfiguration serConf)
+        public static async Task<ServerRestRequestResult<string>> LoginSync(ServerConfiguration serConf)
         {
             const string AUTHORIZATION = "Authorization";
 
@@ -362,7 +362,7 @@ namespace NomadLogic.Common.Serveur.Requests
                 new RestRequestAdditionalParameters(serConf.Identifier)
             };
 
-            var result = HttpRestUtil.ExecuteCompleteRestRequest<RestResponse>(url, pars, null, HttpMethod.Post);
+            var result = await HttpRestUtil.ExecuteCompleteRestRequest<RestResponse>(url, pars, null, HttpMethod.Post).ConfigureAwait(false);
 
             if (result.StatusCode != HttpStatusCode.OK && result.Headers == null)
             {
@@ -437,7 +437,11 @@ namespace NomadLogic.Common.Serveur.Requests
 
             try
             {
-                var result = await HttpRestUtil.ExecuteCompleteRestRequestAsync<RequestSyncResponse>(cToken, url, addReq, extraCodes, HttpMethod.Post);
+
+                 var result = await HttpRestUtil.ExecuteCompleteRestRequestAsync<RequestSyncResponse>(cToken, url, addReq, extraCodes, HttpMethod.Post).ConfigureAwait(false);
+
+                //var result = await SyncRestClient.ExecuteAsync<RequestSyncResponse>(cToken,url,addReq,extraCodes,HttpMethod.Post).ConfigureAwait(false);
+
 
                 switch (result.StatusCode)
                 {
@@ -548,7 +552,7 @@ namespace NomadLogic.Common.Serveur.Requests
         }
 
 
-        public static ServerRestRequestResult<object> SyncUpload(ServerConfiguration conf, string authToken, string sessionId, string filePath, string answerIdentifier)
+        public static async Task<ServerRestRequestResult<object>> SyncUpload(ServerConfiguration conf, string authToken, string sessionId, string filePath, string answerIdentifier)
         {
             var url = conf.GetRestUrl("sync-upload");
 
@@ -569,7 +573,7 @@ namespace NomadLogic.Common.Serveur.Requests
 
             try
             {
-                var result = HttpRestUtil.ExecuteUploadRequest<object>(new FileInfo(filePath), url, pars, extraCodes);
+                var result = await HttpRestUtil.ExecuteUploadRequest<object>(new FileInfo(filePath), url, pars, extraCodes).ConfigureAwait(false);
 
                 switch (result.StatusCode)
                 {
@@ -585,7 +589,7 @@ namespace NomadLogic.Common.Serveur.Requests
             }
         }
 
-        public static ServerRestRequestResult<RequestSyncResponse> SyncFinalize(ServerConfiguration conf, string authToken, string sessionId)
+        public static async Task<ServerRestRequestResult<RequestSyncResponse>> SyncFinalize(ServerConfiguration conf, string authToken, string sessionId)
         {
             var url = conf.GetRestUrl("sync-finalize");
 
@@ -605,7 +609,7 @@ namespace NomadLogic.Common.Serveur.Requests
 
             try
             {
-                var result = HttpRestUtil.ExecuteCompleteRestRequest<RequestSyncResponse>(url, pars, extraCodes);
+                var result = await HttpRestUtil.ExecuteCompleteRestRequest<RequestSyncResponse>(url, pars, extraCodes).ConfigureAwait(false); ;
 
                 switch (result.StatusCode)
                 {
@@ -629,7 +633,7 @@ namespace NomadLogic.Common.Serveur.Requests
             }
         }
 
-        public static ServerRestRequestResult<object> SyncCancel(ServerConfiguration conf, string authToken, string sessionId)
+        public static async Task<ServerRestRequestResult<object>> SyncCancel(ServerConfiguration conf, string authToken, string sessionId)
         {
             var url = conf.GetRestUrl("sync-cancel");
 
@@ -648,7 +652,7 @@ namespace NomadLogic.Common.Serveur.Requests
 
             try
             {
-                var result = HttpRestUtil.ExecuteCompleteRestRequest<RequestSyncResponse>(url, pars, extraCodes, HttpMethod.Delete);
+                var result = await HttpRestUtil.ExecuteCompleteRestRequest<RequestSyncResponse>(url, pars, extraCodes, HttpMethod.Delete).ConfigureAwait(false);
 
                 switch (result.StatusCode)
                 {
@@ -668,7 +672,7 @@ namespace NomadLogic.Common.Serveur.Requests
             }
         }
 
-        public static async Task<ServerRestRequestResult<TerminalDownloadInfo>> DownloadProjectInfo(
+        public static async Task<ServerRestRequestResult<TerminalDownloadInfo>> DownloadProjectInfo(string jwtToken,
             CancellationToken ct, ServerConfiguration conf, string terminalUsername, string terminalPassword)
         {
             if (ct.IsCancellationRequested)
@@ -689,10 +693,16 @@ namespace NomadLogic.Common.Serveur.Requests
                 HttpStatusCode.BadRequest,
                 HttpStatusCode.NoContent
             };
-
+            
             var pars = new List<RestRequestAdditionalParameters>
             {
                // new RestRequestAdditionalParameters(authToken, "Authorization", Header),
+                new RestRequestAdditionalParameters
+                {
+                    Type = Header,
+                    Name = "Authorization",
+                    Value = jwtToken
+                },
                 new RestRequestAdditionalParameters
                 {
                     Type = QueryString,
@@ -740,7 +750,7 @@ namespace NomadLogic.Common.Serveur.Requests
             }
         }
 
-        public static async Task<ServerRestRequestResult<bool>> DownloadTerminalFile(
+        public static async Task<ServerRestRequestResult<bool>> DownloadTerminalFile(String jwtToken,
             CancellationToken token, [NotNull] ServerConfiguration conf, [NotNull] TerminalInfo ti,
             [NotNull] ResourceFileToDownload fic, FileInfo outFile)
         {
@@ -762,10 +772,18 @@ namespace NomadLogic.Common.Serveur.Requests
                 HttpStatusCode.Unauthorized,
                 HttpStatusCode.BadRequest
             };
+           
+
 
             var addParams = new List<RestRequestAdditionalParameters>
             {
                // new RestRequestAdditionalParameters(authToken, "Authorization", Header),
+                new RestRequestAdditionalParameters
+                {
+                    Type = Header,
+                    Name = "Authorization",
+                    Value = jwtToken
+                },
 
                 new RestRequestAdditionalParameters
                 {
@@ -1052,7 +1070,7 @@ namespace NomadLogic.Common.Serveur.Requests
         /// <param name="parameters">Les paramètres de configuration, ainsi que les données à envoyer. Et les fichiers au besoin. </param>
         /// <param name="mockRequest">Indique si la requête est un "mock".</param>
         /// <returns>Le résultat de la requête web.</returns>
-        public static ServerRestRequestResult<RequestSendRespondentDataResult> SendRespondentData(CancellationToken ct, [NotNull] ServerConfiguration conf, 
+        public static async Task<ServerRestRequestResult<RequestSendRespondentDataResult>> SendRespondentData(CancellationToken ct, [NotNull] ServerConfiguration conf, 
             [NotNull] string authToken, [NotNull] RequestSendRespondentDataPayload parameters, bool mockRequest = false, FileInfo debugFile = null)
         {
             if (ct.IsCancellationRequested)
@@ -1153,7 +1171,7 @@ namespace NomadLogic.Common.Serveur.Requests
 
             try
             {
-                var result = HttpRestUtil.ExecuteCompleteMultipartRequest<RequestSendRespondentDataResult>(fieldList, url, addReq, extraCodes, HttpMethod.Post, debugFile);
+                var result = await HttpRestUtil.ExecuteCompleteMultipartRequest<RequestSendRespondentDataResult>(fieldList, url, addReq, extraCodes, HttpMethod.Post, debugFile).ConfigureAwait(false);
 
                 switch (result.StatusCode)
                 {

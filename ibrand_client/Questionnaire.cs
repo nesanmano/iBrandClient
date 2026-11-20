@@ -378,6 +378,18 @@ namespace NomadLogic.iBrandDesktop
             return _questionMap.Values.Count;
         }
 
+        public int GetEUIQuestionNo()
+        {
+            foreach (var question in _questionMap.Values)
+            {
+                if (question.QuestionType == QuestionTypeEnum.ExternalUniqueIdentifier)
+                {
+                    return question.No;
+                }
+            }
+            return -1;
+        }
+
         public int GetLastVisibleQuestionNo()
         {
             var qNo = -1;
@@ -927,6 +939,16 @@ namespace NomadLogic.iBrandDesktop
                 if (newAsn.QuestionType == QuestionTypeEnum.ExternalUniqueIdentifier)
                 {
                     modResp.ExternalUniqueIdentifier = newAsn.Response;
+
+                    // Assign the provided EUI if present
+                    modResp.ExternalUniqueIdentifier = newAsn.Response;
+
+                    // If missing, generate one automatically
+                    if (string.IsNullOrWhiteSpace(modResp.ExternalUniqueIdentifier))
+                    {
+                        modResp.ExternalUniqueIdentifier = Guid.NewGuid().ToString();
+                        log.Warn($"Generated missing EUI for respondent {modResp.Id}: {modResp.ExternalUniqueIdentifier}");
+                    }
                 }
             }
 

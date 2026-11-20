@@ -55,8 +55,11 @@ namespace NomadLogic.iBrandDesktop.Synchro.DownloadRestRequest
             }*/
             
             // On obtient les informations du terminal.
+
             if (token.IsCancellationRequested) return;
-            var tdiRes = ServerRestRequestsUtil.DownloadProjectInfo(token, _conf.CurrentServerConfiguration, desc.Username, desc.Password).GetAwaiter().GetResult();
+            var jwtToken = "";
+            _tokenManager.GetAuthToken(out jwtToken);
+            var tdiRes = ServerRestRequestsUtil.DownloadProjectInfo(jwtToken, token, _conf.CurrentServerConfiguration, desc.Username, desc.Password).GetAwaiter().GetResult();
             
             if (tdiRes.Result != ServerRestRequestResultType.Success)
             {
@@ -197,7 +200,9 @@ namespace NomadLogic.iBrandDesktop.Synchro.DownloadRestRequest
 
             try
             {
-                var resp = await ServerRestRequestsUtil.DownloadTerminalFile(token, _conf.CurrentServerConfiguration, ti, fic, dlFile);
+                var jwtToken = "";
+                _tokenManager.GetAuthToken(out jwtToken);
+                var resp = await ServerRestRequestsUtil.DownloadTerminalFile(jwtToken,token, _conf.CurrentServerConfiguration, ti, fic, dlFile);
 
                 if (resp.Data != true)
                 {

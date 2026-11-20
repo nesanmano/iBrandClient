@@ -30,7 +30,7 @@ namespace NomadLogic.iBrandDesktop.Synchro.SynchFinishers.Juju
                 log.Trace($"Preparing to send respondent to 'send-respondent-data' with following payload: {payload}");
             }
 
-            var sync = ServerRestRequestsUtil.SendRespondentData(ct, _servConfig, authToken, payload);
+            var sync = await ServerRestRequestsUtil.SendRespondentData(ct, _servConfig, authToken, payload).ConfigureAwait(false);
             if (sync?.Data == null || sync.Result != ServerRestRequestResultType.Success)
             {
                 log.Warn("Send respondent data failed with status: " + sync?.Result);

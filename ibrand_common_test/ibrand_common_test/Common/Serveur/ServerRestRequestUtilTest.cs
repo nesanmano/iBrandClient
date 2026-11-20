@@ -412,7 +412,7 @@ namespace NomadLogic.Test.Common.Serveur
 
             var authToken = await GetAuthorizationToken(conf);
 
-            var res = await ServerRestRequestsUtil.DownloadProjectInfo(CancellationToken.None, conf, "nada", "nothing");
+            var res = await ServerRestRequestsUtil.DownloadProjectInfo(authToken,CancellationToken.None, conf, "nada", "nothing");
 
             Assert.IsNotNull(res);
             Assert.AreEqual(NoContent, res.Result);

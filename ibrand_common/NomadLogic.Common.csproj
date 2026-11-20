@@ -456,6 +456,7 @@
     <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\Schemas\v1\Zone.cs" />
     <Compile Include="Util\Networking\QuestionnaireWebRequest\ConnectAndGo\WebRequestConnectAndGo.cs" />
     <Compile Include="Util\Networking\RestRequestBasicResponse.cs" />
+    <Compile Include="Util\Networking\SyncRestClient.cs" />
     <Compile Include="Util\Networking\VimeoApi\VimeoStaticUtil.cs" />
     <Compile Include="Util\PropertyHolder.cs" />
     <Compile Include="Util\RegexWrapper.cs" />
@@ -728,7 +729,7 @@
       <Version>22.6.1</Version>
     </PackageReference>
     <PackageReference Include="AWSSDK.Core">
-      <Version>3.7.12.4</Version>
+      <Version>3.7.12.30</Version>
     </PackageReference>
     <PackageReference Include="AWSSDK.S3">
       <Version>3.7.9.19</Version>

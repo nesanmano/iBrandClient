@@ -43,7 +43,7 @@ namespace NomadLogic.iBrandDesktop.Ui.ApplicationScreen.Generic
             
             if (authToken == null)
             {
-                var login = ServerRestRequestsUtil.LoginSync(currentConfig);
+                var login = await ServerRestRequestsUtil.LoginSync(currentConfig).ConfigureAwait(false);
 
                 if (login.Result != ServerRestRequestResultType.Success)
                 {
@@ -217,7 +217,7 @@ namespace NomadLogic.iBrandDesktop.Ui.ApplicationScreen.Generic
                 }
 
                 // ReSharper disable once AssignNullToNotNullAttribute
-                var rez = ServerRestRequestsUtil.SendRespondentData(ct, currentConfig, authToken, payload, false, debugFile);
+                var rez = await ServerRestRequestsUtil.SendRespondentData(ct, currentConfig, authToken, payload, false, debugFile).ConfigureAwait(false);
             
                 return rez.Result == ServerRestRequestResultType.Success;
             });

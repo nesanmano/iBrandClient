@@ -217,6 +217,10 @@ namespace NomadLogic.iBrandDesktop.Ui.ApplicationScreen.Generic
         {
             if (!_activated) return;
 
+            // Auto-picture screens should NOT be reactivated by this timer
+            if (this is TakePictureAutoScreenAbstract)
+                return;
+
             var tmpStr = _nextCameraMessageStatus;
             _nextCameraMessageStatus = null;
 

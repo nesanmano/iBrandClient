@@ -247,7 +247,7 @@ namespace NomadLogic.Common.Services.Configuration
         [DataMember]
         [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Include)]
-        public ServerConfigurationSwitch CurrentServerConfigurationKey { get; set; } = ServerConfigurationSwitch.DevAWS;
+        public ServerConfigurationSwitch CurrentServerConfigurationKey { get; set; } = ServerConfigurationSwitch.Prod;
 
         // TODO À enlever OPC
         [Obsolete]
@@ -312,9 +312,9 @@ namespace NomadLogic.Common.Services.Configuration
                 {
                     ServerConfigurationSwitch.Prod, new ServerConfiguration
                     {
-                        Address = "192.95.36.173",
+                        Address = "msl-juju-backend-gudqamb3fxa2h5dw.canadacentral-01.azurewebsites.net",
                         Protocol = ServerConfigurationProtocol.Http,
-                        Port = 8081,
+                        Port = 80,
                         LocalPPC = PcName,
                         Identifier = new ServerUserIdentifier
                         {

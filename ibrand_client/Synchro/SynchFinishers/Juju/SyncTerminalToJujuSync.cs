@@ -48,7 +48,7 @@ namespace NomadLogic.iBrandDesktop.Synchro.SynchFinishers.Juju
             };
 
             var dataSent = resp.SizeInBytes();
-            var sync = await ServerRestRequestsUtil.Sync(ct, _servConfig, authToken, resp, CurrentTerminal);
+            var sync = await ServerRestRequestsUtil.Sync(ct, _servConfig, authToken, resp, CurrentTerminal).ConfigureAwait(false);
             dataSent +=  sync.Data?.SizeInBytes() ?? 0;
 
             if (sync.Result == ServerRestRequestResultType.Success)
@@ -113,7 +113,7 @@ namespace NomadLogic.iBrandDesktop.Synchro.SynchFinishers.Juju
                         }
 
                         dataSent += new FileInfo(f.LocalFilePath).Length;
-                        var up = ServerRestRequestsUtil.SyncUpload(_servConfig, authToken, sessionId, f.LocalFilePath, f.AnswerIdentifier);
+                        var up = await ServerRestRequestsUtil.SyncUpload(_servConfig, authToken, sessionId, f.LocalFilePath, f.AnswerIdentifier).ConfigureAwait(false);
                         if (up.Result == ServerRestRequestResultType.Success)
                         {
                             log.Trace("File uploaded. Resp=({0}), session=({1}), qId=({2}), file=({3})", 
@@ -127,7 +127,7 @@ namespace NomadLogic.iBrandDesktop.Synchro.SynchFinishers.Juju
                     }
                 }
 
-                var fin = ServerRestRequestsUtil.SyncFinalize(_servConfig, authToken, sessionId);
+                var fin = await ServerRestRequestsUtil.SyncFinalize(_servConfig, authToken, sessionId).ConfigureAwait(false);
 
                 if (fin.Result == ServerRestRequestResultType.Success)
                 {
@@ -156,9 +156,9 @@ namespace NomadLogic.iBrandDesktop.Synchro.SynchFinishers.Juju
             return false;
         }
 
-        private void CancelRespondent(string authToken, ServerConfiguration conf, string sessionId, RequestSyncRespondent resp)
+        private async Task CancelRespondent(string authToken, ServerConfiguration conf, string sessionId, RequestSyncRespondent resp)
         {
-            var can = ServerRestRequestsUtil.SyncCancel(conf, authToken, sessionId);
+            var can = await ServerRestRequestsUtil.SyncCancel(conf, authToken, sessionId).ConfigureAwait(false);
             if (can.Result == ServerRestRequestResultType.Success)
             {
                 log.Trace("Respondent upload cancelled with success.");

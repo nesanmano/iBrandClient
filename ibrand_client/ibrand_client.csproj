@@ -452,6 +452,7 @@
     <Compile Include="Ui\ApplicationScreen\custom\Young\Questionnaire_YOU201801.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader_Hydro_QC.cs" />
     <Compile Include="Ui\ApplicationScreen\Generic\GalleryScanRequestConfig.cs" />
     <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\Loader360201904.cs" />
     <Compile Include="Ui\ApplicationScreen\FullscreenLoaders\LoaderBat201901.cs" />
@@ -1847,7 +1848,7 @@
       <Version>2.2.5</Version>
     </PackageReference>
     <PackageReference Include="AWSSDK.Core">
-      <Version>3.7.12.4</Version>
+      <Version>3.7.12.30</Version>
     </PackageReference>
     <PackageReference Include="AWSSDK.S3">
       <Version>3.7.9.19</Version>

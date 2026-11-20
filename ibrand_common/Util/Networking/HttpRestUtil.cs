@@ -94,8 +94,10 @@ namespace NomadLogic.Common.Util.Networking
                                 break;
                             case Header:
                                 var toAdd = par.Value.ToString();
+
                                 hrm.Headers.Add(par.Name, toAdd);
                                 log.Trace("Header added to request:\n{0}={1}", par.Name, toAdd);
+
                                 break;
                             case Body:
                                 if (par.Value is HttpJsonBody jsonBody)
@@ -324,50 +326,43 @@ namespace NomadLogic.Common.Util.Networking
             return default;
         }
 
-        private static async Task<RestRequestJsonResponse<T>> CreateJsonRequestResponseAsync<T>(HttpResponseMessage response, string initialUrl, 
+        private static async Task<RestRequestJsonResponse<T>> CreateJsonRequestResponseAsync<T>(
+            HttpResponseMessage response,
+            string initialUrl,
             FileInfo debugWriteToFilePath = null)
         {
             var restRequestResponse = new RestRequestJsonResponse<T>
             {
-                // ReSharper disable once PossibleNullReferenceException
                 StatusCode = response.StatusCode,
                 Headers = response.Headers
             };
 
-            if (response.Content.Headers.ContentLength == 0) return restRequestResponse;
-
-            if (!(response.Content is StreamContent) && response.Content.Headers.ContentType.MediaType != "application/json") return restRequestResponse;
-
-            var contentStream = await response.Content.ReadAsStreamAsync();
-
-            using (var streamReader = new StreamReader(contentStream))
+            // Azure 206 responses are chunked; Content‑Length may be null or 0.
+            // Do NOT return early based on Content‑Length.
+            if (!(response.Content is StreamContent) &&
+                response.Content.Headers.ContentType?.MediaType != "application/json")
             {
-                bool success;
-                T info;
-                if (debugWriteToFilePath != null)
-                {
-                    log.Debug("Writing request result to file: {0}", debugWriteToFilePath.FullName);
-                    // On créer le fichier sur disque avant (partie débug) qui va persister après l'opération.
-                    var baseStream = streamReader.BaseStream;
-                    using (Stream s = File.Create(debugWriteToFilePath.FullName))
-                    {
-                        await baseStream.CopyToAsync(s);
-                    }
-                    debugWriteToFilePath.Refresh();
+                return restRequestResponse;
+            }
 
-                    // Puis on lit le fichier comme source pour le démarshalling.
-                    info = JsonUtil.ReadJsonFile<T>(debugWriteToFilePath);
-                    success = info != null;
-                }
-                else
+            // Always read the stream
+            Stream contentStream = await response.Content.ReadAsStreamAsync();
+
+            // Debug path: copy raw stream BEFORE wrapping it in StreamReader
+            if (debugWriteToFilePath != null)
+            {
+                log.Debug("Writing request result to file: {0}", debugWriteToFilePath.FullName);
+
+                using (Stream fileStream = File.Create(debugWriteToFilePath.FullName))
                 {
-                    using (var jsonReader = new JsonTextReader(streamReader))
-                    {
-                        success = JsonUtil.CreateInstanceFromJson(jsonReader, out info);
-                    }
+                    await contentStream.CopyToAsync(fileStream);
                 }
 
-                // Branche commune
+                debugWriteToFilePath.Refresh();
+
+                T info = JsonUtil.ReadJsonFile<T>(debugWriteToFilePath);
+                bool success = info != null;
+
                 if (success)
                 {
                     restRequestResponse.InstancedBody = info;
@@ -377,10 +372,33 @@ namespace NomadLogic.Common.Util.Networking
                 {
                     log.Warn("Could not marshall request response as JSON for URL: {0}", initialUrl);
                 }
+
+                return restRequestResponse;
+            }
+
+            // Normal JSON parsing path
+            using (StreamReader streamReader = new StreamReader(contentStream))
+            {
+                using (JsonTextReader jsonReader = new JsonTextReader(streamReader))
+                {
+                    T parsed;
+                    bool success = JsonUtil.CreateInstanceFromJson(jsonReader, out parsed);
+
+                    if (success)
+                    {
+                        restRequestResponse.InstancedBody = parsed;
+                        log.Trace("Rest request converted to JSON with success for URL: {0}", initialUrl);
+                    }
+                    else
+                    {
+                        log.Warn("Could not marshall request response as JSON for URL: {0}", initialUrl);
+                    }
+                }
             }
 
             return restRequestResponse;
         }
+
 
         private static async Task<RestRequestJsonResponse<T>> ExecuteAsyncRequest<T>(CancellationToken cToken, string url, 
             IList<RestRequestAdditionalParameters> additionalParameters, ISet<HttpStatusCode> expected, HttpRequestMessage hrm, FileInfo debugFileContent = null)
@@ -395,13 +413,14 @@ namespace NomadLogic.Common.Util.Networking
                 }
 
                 var response = await HTTP_CLIENT_INSTANCE.SendAsync(hrm, HttpCompletionOption.ResponseContentRead, cToken).ConfigureAwait(false); // On attend que toute le requête soit complète.
-                
+
                 var errorInst = AnalyseRequestCode<RestRequestJsonResponse<T>>(url, hrm.Method, expected,
                     response?.StatusCode ?? HttpStatusCode.NotAcceptable,
                     response?.Content,
                     response?.Headers,
                     log.IsTraceEnabled);
                 return errorInst ?? await CreateJsonRequestResponseAsync<T>(response, url, debugFileContent);
+
             }
             catch (Exception e)
             {
@@ -422,7 +441,7 @@ namespace NomadLogic.Common.Util.Networking
             }
         }
 
-        private static RestRequestJsonResponse<T> ExecuteRequest<T>(string url, IList<RestRequestAdditionalParameters> additionalParameters, 
+        private static async Task<RestRequestJsonResponse<T>> ExecuteRequest<T>(string url, IList<RestRequestAdditionalParameters> additionalParameters, 
             ISet<HttpStatusCode> expected, HttpRequestMessage hrm, FileInfo debugFileContent = null)
         {
             try
@@ -434,7 +453,7 @@ namespace NomadLogic.Common.Util.Networking
                     log.Trace("HttpClient request created:\n\t" + hrm.ToStringPublicProperties(1));
                 }
 
-                var response = HTTP_CLIENT_INSTANCE.SendAsync(hrm, HttpCompletionOption.ResponseContentRead).Result; // On attend que toute le requête soit complète.
+                var response = await HTTP_CLIENT_INSTANCE.SendAsync(hrm, HttpCompletionOption.ResponseContentRead).ConfigureAwait(false); ; // On attend que toute le requête soit complète.
                 
                 var errorInst = AnalyseRequestCode<RestRequestJsonResponse<T>>(url, hrm.Method, expected,
                     response?.StatusCode ?? HttpStatusCode.NotAcceptable,
@@ -500,7 +519,7 @@ namespace NomadLogic.Common.Util.Networking
             return await ExecuteCompleteRestRequestAsync<T>(cToken, url, pars, expected, webMethod).ConfigureAwait(false);
         }
 
-        public static RestRequestJsonResponse<T> ExecuteCompleteRestRequest<T>(string url,
+        public static async Task<RestRequestJsonResponse<T>> ExecuteCompleteRestRequest<T>(string url,
             HttpJsonBody mainBody, ISet<HttpStatusCode> expected = null, HttpMethod webMethod = null)
         {
             var pars = new List<RestRequestAdditionalParameters>
@@ -508,7 +527,7 @@ namespace NomadLogic.Common.Util.Networking
                 new RestRequestAdditionalParameters(mainBody)
             };
 
-            return ExecuteCompleteRestRequest<T>(url, pars, expected, webMethod);
+            return await ExecuteCompleteRestRequest<T>(url, pars, expected, webMethod).ConfigureAwait(false);
         }
 
 
@@ -518,10 +537,10 @@ namespace NomadLogic.Common.Util.Networking
             return await ExecuteCompleteRestRequestAsync<T>(cToken, url, additionalParameters, null, webMethod).ConfigureAwait(false);
         }
 
-        public static RestRequestJsonResponse<T> ExecuteCompleteRestRequest<T>(string url,
+        public static async Task<RestRequestJsonResponse<T>> ExecuteCompleteRestRequest<T>(string url,
             IList<RestRequestAdditionalParameters> additionalParameters, HttpMethod webMethod)
         {
-            return ExecuteCompleteRestRequest<T>(url, additionalParameters, null, webMethod);
+            return await ExecuteCompleteRestRequest<T>(url, additionalParameters, null, webMethod).ConfigureAwait(false); ;
         }
 
         /// <summary>
@@ -552,10 +571,12 @@ namespace NomadLogic.Common.Util.Networking
                 Method = webMethod ?? HttpMethod.Get
             };
 
+            log.Trace("ExecuteCompleteRestRequestAsync returning for URL: {0}", url);
+
             return await ExecuteAsyncRequest<T>(cToken, url, additionalParameters, expected, hrm, debugFileContent).ConfigureAwait(false);
         }
 
-        public static RestRequestJsonResponse<T> ExecuteCompleteRestRequest<T>(string url,
+        public static async Task<RestRequestJsonResponse<T>> ExecuteCompleteRestRequest<T>(string url,
             IList<RestRequestAdditionalParameters> additionalParameters = null, ISet<HttpStatusCode> expected = null, HttpMethod webMethod = null)
         {
             var hrm = new HttpRequestMessage
@@ -563,7 +584,7 @@ namespace NomadLogic.Common.Util.Networking
                 Method = webMethod ?? HttpMethod.Get
             };
 
-            return ExecuteRequest<T>(url, additionalParameters, expected, hrm);
+            return await ExecuteRequest<T>(url, additionalParameters, expected, hrm).ConfigureAwait(false);
         }
         
         /// <summary>
@@ -839,6 +860,9 @@ namespace NomadLogic.Common.Util.Networking
                 Method = method ?? HttpMethod.Post
             };
 
+            PrepareHttpRequestMessage(additionalParameters, hrm, url);
+
+
             using (var form = new MultipartFormDataContent())
             using (var stream = fileToSend.OpenRead())
             using (var streamContent = new StreamContent(stream))
@@ -849,7 +873,7 @@ namespace NomadLogic.Common.Util.Networking
             }
         }
 
-        public static RestRequestJsonResponse<T> ExecuteUploadRequest<T>([NotNull] FileInfo fileToSend, string url,
+        public static async Task<RestRequestJsonResponse<T>> ExecuteUploadRequest<T>([NotNull] FileInfo fileToSend, string url,
             IList<RestRequestAdditionalParameters> additionalParameters = null, ISet<HttpStatusCode> expected = null, HttpMethod method = null)
         {
             if (!fileToSend.Exists)
@@ -875,7 +899,7 @@ namespace NomadLogic.Common.Util.Networking
                 form.Add(streamContent, "file", fileToSend.Name);
                 hrm.Content = form;
 
-                return ExecuteRequest<T>(url, additionalParameters, expected, hrm);
+                return await ExecuteRequest<T>(url, additionalParameters, expected, hrm).ConfigureAwait(false); ;
             }
         }
 
@@ -892,7 +916,7 @@ namespace NomadLogic.Common.Util.Networking
         /// <param name="expected">Codes HTTP additionnels qui sont normalement attendu par l'appellant comme valide.</param>
         /// <param name="method">Type de requête HTTP.</param>
         /// <returns>Le résultat de la requête.</returns>
-        public static RestRequestJsonResponse<T> ExecuteCompleteMultipartRequest<T>([NotNull] IList<RestRequestMultipartFormBase> formData, string url,
+        public static async Task<RestRequestJsonResponse<T>> ExecuteCompleteMultipartRequest<T>([NotNull] IList<RestRequestMultipartFormBase> formData, string url,
             IList<RestRequestAdditionalParameters> additionalParameters = null, ISet<HttpStatusCode> expected = null, HttpMethod method = null,
             FileInfo debugFileContent = null)
         {
@@ -921,7 +945,7 @@ namespace NomadLogic.Common.Util.Networking
                     }
 
                     hrm.Content = form;
-                    requestResult = ExecuteRequest<T>(url, additionalParameters, expected, hrm, debugFileContent);
+                    requestResult = await ExecuteRequest<T>(url, additionalParameters, expected, hrm, debugFileContent).ConfigureAwait(false);
                 }
                 catch (Exception e)
                 {
